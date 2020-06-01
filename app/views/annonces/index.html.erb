@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col align-self-start">
+    </div>
+    <div class="col align-self-center">
+    <%@annonces.each{ |an|%>
+        <div class="card mt-2 mb-5" style="width: 18rem;">
+            <img class="card-img-top" src="https://img.freepik.com/vecteurs-libre/beau-paysage-printemps-degrade_23-2148448598.jpg?size=626&ext=jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><%=an.lieu%></h5>
+                <h6 class="card-subtitle mb-2 text-muted">Loyer : <%=an.prix%></h6>
+                <h6 class="card-subtitle mb-2 text-muted">Place dispo : <%=an.capacite%></h6>
+                <p class="card-text"><%=an.description%></p>
+                <a href="#" class="badge badge-secondary">Details</a>
+            </div>
+        </div>
+    <%}%>
+    </div>
+    <div class="col align-self-end">
+    </div>
+  </div>
+</div>

@@ -12,8 +12,7 @@
                 <h6 class="card-subtitle mb-2 text-muted">Loyer : <%=an.prix%></h6>
                 <h6 class="card-subtitle mb-2 text-muted">Place dispo : <%=an.capacite%></h6>
                 <p class="card-text"><%=an.description%></p>
-                <a href="#" class="badge badge-secondary">Details</a>
-                <%=link_to "Details",annonce_path(id:an.id)%>
+                <%=link_to "Details",annonce_path(id:an.id), class:"badge badge-secondary"%>
             </div>
         </div>
     <%}%>

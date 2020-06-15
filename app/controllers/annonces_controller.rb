@@ -6,4 +6,6 @@ class AnnoncesController < ApplicationController
   def show 
     @annonce = Annonce.find(params[:id])
   end
+
+  
 end

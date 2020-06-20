@@ -12,11 +12,15 @@ class AnnonceDashboard < Administrate::BaseDashboard
     UsersInterested: Field::HasMany.with_options(class_name: "User"),
     favoris: Field::HasMany,
     UsersFavoris: Field::HasMany.with_options(class_name: "User"),
+    photos: Field::HasMany,
     id: Field::Number,
     lieu: Field::String,
     capacite: Field::Number,
+    loyer_total: Field::Number,
+    loyer_partiel: Field::Number,
+    place_libre: Field::Number,
     description: Field::Text,
-    prix: Field::String,
+    contrat_partiel: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -40,11 +44,15 @@ class AnnonceDashboard < Administrate::BaseDashboard
   UsersInterested
   favoris
   UsersFavoris
+  photos
   id
   lieu
   capacite
+  loyer_total
+  loyer_partiel
+  place_libre
   description
-  prix
+  contrat_partiel
   created_at
   updated_at
   ].freeze
@@ -57,10 +65,14 @@ class AnnonceDashboard < Administrate::BaseDashboard
   UsersInterested
   favoris
   UsersFavoris
+  photos
   lieu
   capacite
+  loyer_total
+  loyer_partiel
+  place_libre
   description
-  prix
+  contrat_partiel
   ].freeze
 
   # COLLECTION_FILTERS

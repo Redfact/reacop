@@ -5,6 +5,9 @@ class AnnoncesController < ApplicationController
 
   def show 
     @annonce = Annonce.find(params[:id])
+    @place_libre= @annonce.place_libre
+    @place_occupe= @annonce.capacite - @place_libre
+    @partiel = @annonce.contrat_partiel
   end
 
   

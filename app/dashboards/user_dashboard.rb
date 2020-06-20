@@ -9,15 +9,15 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    avatar: Field::String,
-    disponible: Field::Boolean,
+    admin: Field::Boolean,
     nom: Field::String,
     prenom: Field::String,
+    avatar: Field::String,
+    disponible: Field::Boolean,
     age: Field::Number,
     number: Field::String,
     social: Field::String,
     introduction: Field::Text,
-    admin: Field::Boolean,
     email: Field::String,
     encrypted_password: Field::String,
     reset_password_token: Field::String,
@@ -34,24 +34,24 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
   id
-  avatar
-  disponible
+  admin
   nom
+  prenom
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
   id
-  avatar
-  disponible
+  admin
   nom
   prenom
+  avatar
+  disponible
   age
   number
   social
   introduction
-  admin
   email
   encrypted_password
   reset_password_token
@@ -65,15 +65,15 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  avatar
-  disponible
+  admin
   nom
   prenom
+  avatar
+  disponible
   age
   number
   social
   introduction
-  admin
   email
   encrypted_password
   reset_password_token

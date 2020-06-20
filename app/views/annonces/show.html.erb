@@ -1,4 +1,8 @@
-<span class="badge badge-pill badge-warning">Contrat partiel possible</span>
+
+
+<% if @partiel %>
+  <span class="badge badge-pill badge-warning">Contrat partiel possible</span>
+<% end %>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -26,21 +30,30 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<%@annonce.capacite.times{%>
-<span class="badge badge-danger">Occupé</span>
-<%}%>
-<span class="badge badge-success">Libre</span>
+
+<%@place_libre.times do%>
+  <span class="badge badge-info">Libre</span>
+<%end%>
+<%@place_occupe.times do%>
+  <span class="badge badge-danger">Occupé</span>
+<%end%>
 
 <div class="card mt-3" style="width: 100%;">
   <div class="card-body">
     <h5 class="card-title"><%=@annonce.lieu%></h5>
     <p class="card-text"><%=@annonce.description%></p>
-    <h6 class="card-subtitle mb-2 text-info">Loyer total (mensuel) : <%=@annonce.prix%></h6>
-    <h6 class="card-subtitle mb-2 text-info">Loyer en partiel : <%=@annonce.prix%></h6>
+    <h6 class="card-subtitle mb-2 text-info">Loyer total (mensuel) : <%=@annonce.loyer_total%> Ar</h6>
+    <% if @partiel %>
+         <h6 class="card-subtitle mb-2 text-info">Loyer en partiel : <%=@annonce.loyer_partiel%> Ar </h6> 
+    <% end %>    
     <a class="btn btn-secondary btn-sm" href="#" role="button">Louer</a>
     <a class="btn btn-secondary btn-sm" href="#" role="button">Interessé</a>
     <a class="btn btn-secondary btn-sm" href="#" role="button">Chercher colocataires</a>
-    <a class="btn btn-warning btn-sm" href="#" role="button">Louer partiellement</a>
+    
+    <% if @partiel %>
+         <a class="btn btn-warning btn-sm" href="#" role="button">Louer partiellement</a> 
+    <% end %>
+    
 
   </div>
 </div>

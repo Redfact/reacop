@@ -17,12 +17,15 @@ AnInteressant.destroy_all
     first_name = Faker::Name.first_name
     last_name = Faker::Name.last_name
     User.create(nom:last_name , prenom:first_name ,email:Faker::Internet.email , password:"123456")
-
+    cap= rand(1..5)
     Annonce.create(
     lieu:Faker::Address.city,
-    prix:"#{rand(100..100000)} AR",
+    loyer_total:rand(1000..100000),
+    loyer_partiel:rand(100..1000),
     description:Faker::Hipster.paragraph(sentence_count: 3),
-    capacite:rand(1..5)
+    capacite:cap,
+    place_libre:rand(1..cap),
+    contrat_partiel: [true,false].sample
     )
 
     Message.create(
@@ -40,5 +43,9 @@ AnInteressant.destroy_all
         user_id: User.ids.sample
     )
 
+    Photo.create(
+        url: Faker::Avatar.image,
+        annonce_id: Annonce.ids.sample
+    )
 }
 

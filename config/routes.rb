@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :annonces
       resources :favoris
       resources :messages
-
+      resources :photos
       root to: "users#index"
     end
   devise_for :users

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'users/show'
   namespace :admin do
       resources :users
       resources :an_interessants
@@ -13,8 +15,7 @@ Rails.application.routes.draw do
   root to: 'annonces#index'
   resources :annonces
 
-  # devise_for :users
-  # resources :users, only: [:index,:show]
+  resources :users, only: [:index,:show]
   
 end
 

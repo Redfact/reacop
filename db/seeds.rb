@@ -47,5 +47,9 @@ AnInteressant.destroy_all
         url: Faker::Avatar.image,
         annonce_id: Annonce.ids.sample
     )
+    Avatar.create(
+        url: Faker::Avatar.image,
+        user_id: Annonce.ids.sample
+    )
 }
 

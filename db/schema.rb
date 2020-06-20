@@ -51,10 +51,11 @@ ActiveRecord::Schema.define(version: 2020_06_15_222155) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "avatar"
-    t.boolean "disponible", default: false
+    t.boolean "admin", default: false
     t.string "nom"
     t.string "prenom"
+    t.string "avatar"
+    t.boolean "disponible", default: false
     t.integer "age"
     t.string "number"
     t.string "social"

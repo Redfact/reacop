@@ -9,11 +9,14 @@
 gem 'faker'
 
 User.destroy_all
-
+Message.destroy_all
+Favori.destroy_all
+Annonce.destroy_all
+AnInteressant.destroy_all
 10.times{
     first_name = Faker::Name.first_name
     last_name = Faker::Name.last_name
-    User.create(nom:last_name , prenom:first_name)
+    User.create(nom:last_name , prenom:first_name ,email:Faker::Internet.email , password:"123456")
 
     Annonce.create(
     lieu:Faker::Address.city,

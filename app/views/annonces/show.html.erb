@@ -4,9 +4,9 @@
   <span class="badge badge-pill badge-warning">Contrat partiel possible</span>
 <% end %>
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide w-75 mx-auto col-sm" data-ride="carousel">
 
-  <div class="carousel-inner w-100" role="listbox" style="height: 400px !important;" >
+  <div class="carousel-inner w-75 mx-auto" role="listbox" style="height: 350px !important;" >
     <div class="carousel-item active">     
       <% if !@photos.empty? %>
           <a href= <%=@photos.last.url%> >
@@ -30,7 +30,7 @@
 
   
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+  <a class="carousel-control-prev " href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>

@@ -8,6 +8,7 @@ class AnnoncesController < ApplicationController
     @place_libre= @annonce.place_libre
     @place_occupe= @annonce.capacite - @place_libre
     @partiel = @annonce.contrat_partiel
+    @photos = @annonce.photos
   end
 
   

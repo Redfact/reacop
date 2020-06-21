@@ -5,11 +5,17 @@
     </div>
     <div class="col align-self-center">
     <%@annonces.each{ |an|%>
-        <div class="card mt-2 mb-5" style="width: 40rem;">
+        <div class="card mt-2 mb-5 " style="width: 40rem;" >
             <% if an.contrat_partiel %>
                 <span class="badge badge-pill badge-warning">Contrat partiel possible</span>
             <% end %>
-            <img class="card-img-top" src="https://img.freepik.com/vecteurs-libre/beau-paysage-printemps-degrade_23-2148448598.jpg?size=626&ext=jpg" alt="Card image cap">
+            
+            <% if !an.photos.empty? %>
+              <img class="card-img-top" src=<%=an.photos.first.url%> alt="Card image cap"> 
+              <% else %>
+               <img class="card-img-top" src="https://i.imgur.com/u4qCmmYl.jpg" alt="Card image cap"> 
+            <% end %>
+            
             <div class="card-body">
                 <h5 class="card-title"><%=an.lieu%></h5>
                 <h6 class="card-subtitle mb-2 text-muted">Loyer total : <%=an.loyer_total%> ar </h6>

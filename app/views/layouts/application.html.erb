@@ -15,7 +15,7 @@
 
   </head>
 
-  <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <%= link_to annonces_path do %>
     <%= image_tag "logoRea.png" ,width:"40" ,height:"40" ,class:"d-inline-block align-top" ,alt:""%>
     <% end %>
@@ -39,7 +39,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% if current_user && user_signed_in? %>
-            <%= link_to 'Compte', user_path(current_user), class:"dropdown-item"  %>
+            <%= link_to 'Compte', edit_user_registration_path(current_user), class:"dropdown-item"  %>
             <%= link_to 'Se deconnecter', destroy_user_session_path ,method: :delete , class:"dropdown-item" %>
           <%else%>
             <%= link_to 'Se connecter', new_user_session_path ,class:"dropdown-item" %>

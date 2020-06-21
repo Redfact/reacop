@@ -1,5 +1,13 @@
 gem 'faker'
 
+images =[
+    "https://medias-neuf-be.avendrealouer.fr/Image/programme-neuf_4644447_D.jpg",
+    "https://www.eiffage-immobilier.fr/files/live/sites/eiffage-immo/files/contributed/visuel2018/appartement-neuf-vitruve-capingheim-slider1.jpg",
+    "https://www.urbat.com/medias/programmes/images/384_GILIBERT/programme-neuf-marseille-pavillon-9-384_TD_05_1_xl.jpg",
+    "https://bonaparte-promotion.fr/sites/default/files/styles/head_xs/public/programmes/2_e_element_marseille_appartement_neuf_1.png?itok=OZ2saOQO",
+    "https://q-xx.bstatic.com/images/hotel/max1024x768/360/36001122.jpg"
+]
+
 User.destroy_all
 Message.destroy_all
 Favori.destroy_all
@@ -36,7 +44,7 @@ AnInteressant.destroy_all
     )
 
     Photo.create(
-        url: Faker::Avatar.image,
+        url: images.sample,
         annonce_id: Annonce.ids.sample
     )
     Avatar.create(

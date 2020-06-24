@@ -10,6 +10,5 @@ class AnnoncesController < ApplicationController
     @partiel = @annonce.contrat_partiel
     @photos = @annonce.photos
   end
-
   
 end

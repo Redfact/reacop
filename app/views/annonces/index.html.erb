@@ -5,7 +5,7 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Biens à vendres</a>
+        <a class="nav-link" href="#">Biens à vendre</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Biens à louer</a>
@@ -44,9 +44,14 @@
             <% end %>
             
             <div class="card-body">
-                <h5><%= link_to an.lieu , annonce_path(id:an.id) ,class:"card-title text-dark" %></h5>
-                <h6 class="card-subtitle mb-2 text-primary "><%=an.loyer_total%> AR </h6>
-                <h6 class="card-subtitle mb-2 text-muted">Chambres <%=an.capacite%> </h6>
+                <h4><%= link_to an.lieu , annonce_path(id:an.id) ,class:"card-title text-dark font-weight-bold" %></h4>
+                <% if an.vente? %>
+                <p class="card-subtitle mb-2 text-dark font-weight-bold">À vendre</p>
+                <% else %>
+                 <p class="card-subtitle mb-2 text-dark font-weight-bold">À louer</p>
+                <% end %>
+                <p class="card-subtitle mb-2 text-primary "><%=an.loyer_total%> Ar </p>
+                <p class="card-subtitle mb-2 text-muted">Chambres <%=an.capacite%> </p>
                 <p class="card-text text-truncate"><%=an.description%></p>
             </div>
         </div>

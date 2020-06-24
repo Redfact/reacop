@@ -36,8 +36,13 @@
 
 <div class="card mt-3 mb-5" style="width: 100%;">
   <div class="card-body">
-    <h5 class="card-title"><%=@annonce.lieu%></h5>
-    <h6 class="card-subtitle mb-2 text-info"><%=@annonce.loyer_total%> Ar</h6>
+    <h3 class="card-title text-dark font-weight-bold"><%=@annonce.lieu%></h3>
+      <% if @annonce.vente? %>
+        <p class="card-subtitle mb-2 text-dark font-weight-bold">À vendre</p>
+        <% else %>
+        <p class="card-subtitle mb-2 text-dark font-weight-bold">À louer</p>
+      <% end %>
+    <p class="card-subtitle mb-2 text-primary"><%=@annonce.loyer_total%> Ar</p>
     <p class="card-text text-secondary"><%=@annonce.description%></p>
   </div>
 </div>

@@ -1,24 +1,2 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://assistelio-immo.mg/?gclid=Cj0KCQjwirz3BRD_ARIsAImf7LOfxsJamUVG0gA0SOaaiKbBnAnhRTYCYCztqLSGdu4Buif5SNS0qu0aAqb0EALw_wcB&fbclid=IwAR06a3iujQC4gUKX4aLbfpYmsKZH6rfWICjVXeLfn8PD_N60eilWD8ZFr-A

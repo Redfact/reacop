@@ -22,10 +22,13 @@ AnInteressant.destroy_all
     lieu:Faker::Address.city,
     loyer_total:rand(1000..100000),
     loyer_partiel:rand(100..1000),
-    description:Faker::Hipster.paragraph(sentence_count: 3),
+    description:Faker::Hipster.paragraph(sentence_count:10),
     capacite:cap,
     place_libre:rand(1..cap),
-    contrat_partiel: [true,false].sample
+    contrat_partiel: [true,false].sample,
+    typeBien: rand(0..1),
+    typeVente: rand(0..1),
+    AlaUne:[true,false].sample
     )
 
     Message.create(

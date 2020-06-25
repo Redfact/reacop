@@ -71,6 +71,8 @@ gem 'sprockets-rails', '2.3.3'
 
 gem 'devise'
 
+gem 'colorize'
+
 gem 'administrate'
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'

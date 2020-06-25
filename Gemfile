@@ -50,10 +50,6 @@ group :development do
 
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem 'table_print'
-
-  gem 'colorize'
-
 end
 
 group :test do
@@ -72,6 +68,9 @@ gem 'sprockets-rails', '2.3.3'
 gem 'devise'
 
 gem 'colorize'
+
+gem 'table_print'
+
 
 gem 'administrate'
 

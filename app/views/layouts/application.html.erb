@@ -16,9 +16,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
   </head>
-  <nav class="navbar navbar-expand-lg navbar-dark"style="background-color: #0f3e3e;">
+  <nav class="navbar navbar-expand-lg navbar-dark"style="background-color: #00404f;">
     <%= link_to annonces_path do %>
-    <%= image_tag "ReaTr.png" ,width:"175" ,height:"175" ,class:" align-top" ,alt:""%>
+    <%= image_tag "ReaTr.png" ,width:"175" ,height:"175" ,class:" align-top" ,alt:"Rea Brand"%>
     <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -30,6 +30,9 @@
       </li>
       <li class="nav-item">
         <%= link_to 'Logements', annonces_path ,class:"nav-link"%>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'A propos', apropos_show_path ,class:"nav-link"%>
       </li>
 
       </li> 

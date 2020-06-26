@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
+  get 'apropos/show'
   namespace :admin do
       resources :users
       resources :an_interessants

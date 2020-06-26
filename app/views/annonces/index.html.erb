@@ -60,8 +60,8 @@
                     <% end %>
                     
                     <div class="card-body">
-                        <h4><%= link_to an.lieu , annonce_path(id:an.id) ,class:"card-title text-dark font-weight-bold" %></h4>
-                        <% if an.vente? %>
+                        <h4><%=link_to "#{an.typeBien} à #{an.lieu}" , annonce_path(id:an.id) ,class:"card-title text-dark font-weight-bold" %></h4>
+                        <% if an.Vente? %>
                         <p class="card-subtitle mb-2 text-dark font-weight-bold">À vendre</p>
                         <% else %>
                         <p class="card-subtitle mb-2 text-dark font-weight-bold">À louer</p>

@@ -21,14 +21,17 @@
     <div class="container">
               <h2 class="text-white font-weight-bold">Contactez nous!</h2>
               <h6>
-                <%= link_to "+261 34 99 066 58", "tel:#{+261349906658}",class:"font-weight-bold text-white" %>
+                  <%= image_tag "phone.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
+                  <%= link_to "+261 34 99 066 58", "tel:#{+261349906658}",class:"font-weight-bold text-white" %>
               </h6>
               <p>
                   <%= link_to "https://www.facebook.com/REAImmoMadagascar/" do %>
-                  <%= image_tag "fb.svg" ,width:"75" ,height:"75" ,class:" align-top" ,alt:"Rea Brand"%>
+                  <%= image_tag "facebook.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
+                  <span class="font-weight-normaf text-white">fb.com/REAImmoMadagascar</span>
                   <% end %>
               </p>
               <h5>
+                  <%= image_tag "mail.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
                   <%= mail_to "reagencym@gmail.com","reagencym@gmail.com",class:"font-weight-bold text-white" %>
               </h5>
 

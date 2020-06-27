@@ -45,6 +45,10 @@
         <p class="card-subtitle mb-2 text-dark font-weight-bold">À louer</p>
       <% end %>
     <p class="card-subtitle mb-2 text-primary"><%=@annonce.loyer_total%> Ar</p>
+    <p class="card-subtitle mb-2 text-muted">
+      <%= image_tag "bed.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
+      <%=@annonce.capacite%> Chambres 
+    </p>
     <p class="card-text text-secondary"><%=@annonce.description%></p>
   </div>
 </div>

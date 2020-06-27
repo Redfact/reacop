@@ -67,7 +67,10 @@
                         <p class="card-subtitle mb-2 text-dark font-weight-bold">À louer</p>
                         <% end %>
                         <p class="card-subtitle mb-2 text-primary "><%=an.loyer_total%> Ar </p>
-                        <p class="card-subtitle mb-2 text-muted">Chambres <%=an.capacite%> </p>
+                        <p class="card-subtitle mb-2 text-muted">
+                          <%= image_tag "bed.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
+                          <%=an.capacite%> Chambres 
+                        </p>
                         <p class="card-text text-truncate"><%=an.description%></p>
                     </div>
                 </div>

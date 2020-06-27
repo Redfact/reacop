@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'apropos/show'
+  root to: 'annonces#index'
+  get 'about',to: 'apropos#show'
   namespace :admin do
       resources :users
       resources :an_interessants
@@ -11,7 +12,6 @@ Rails.application.routes.draw do
       root to: "users#index"
     end
   devise_for :users
-  root to: 'annonces#index'
   resources :annonces
 
   resources :users, only: [:index,:show]

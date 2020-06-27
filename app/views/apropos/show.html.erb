@@ -1,28 +1,47 @@
 <style>
 .jumbotron
 {
-  height: 500px;
-  width: 100%;
   background-image: url('/assets/ReaJumbo.png');
-
+  height: 75vh;
+  width: 75%;
   margin-top: 1cm;
+  
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+ display: flex;
+ align-items: center;
 }
+
 </style>
 
-<div class="jumbotron jumbotron-fluid text-center" id="jumbo">
+<div class="d-flex justify-content-around">
+  <div class="jumbotron text-center">
 
-	<div class="container justify-content-center ">
-            <h1 class="display-5 text-white">Contactez nous !</h1>
-            <span class="align-middle">
-                <a class="btn btn-primary btn-lg " href="#" role="button">Facebook</a>
-            </span>
+    <div class="container">
+              <h2 class="text-white font-weight-bold">Contactez nous!</h2>
+              <h6>
+                <%= link_to "+261 34 99 066 58", "tel:#{+261349906658}",class:"font-weight-bold text-white" %>
+              </h6>
+              <p>
+                  <%= link_to "https://www.facebook.com/REAImmoMadagascar/" do %>
+                  <%= image_tag "fb.svg" ,width:"75" ,height:"75" ,class:" align-top" ,alt:"Rea Brand"%>
+                  <% end %>
+              </p>
+              <h5>
+                  <%= mail_to "reagencym@gmail.com","reagencym@gmail.com",class:"font-weight-bold text-white" %>
+              </h5>
 
-            <a class="btn btn-secondary btn-lg" href="#" role="button">
-                            Telephone
-            </a>
-	</div>
-
+    </div>
+  </div>
 </div>
+
+<div class="container-fluid w-75">
+  <div class="row justify-content-around">
+     <%= image_tag "fly1.jpg" , class:"card-img-top rounded col-md-4 p-3" ,alt:"Empty image"%>
+     <%= image_tag "fly2.jpg" , class:"card-img-top rounded col-md-4 p-3" ,alt:"Empty image"%>
+     <%= image_tag "fly3.jpg" , class:"card-img-top rounded col-md-4 p-3" ,alt:"Empty image"%>
+  </div>
+</div>
+
+

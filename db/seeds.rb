@@ -28,7 +28,8 @@ AnInteressant.destroy_all
     contrat_partiel: [true,false].sample,
     typeBien: rand(0..1),
     typeVente: rand(0..1),
-    AlaUne:[true,false].sample
+    AlaUne:[true,false].sample,
+    created_at: rand((DateTime.now - 3.months)..DateTime.now+3.months)
     )
 
     Message.create(

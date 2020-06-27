@@ -5,6 +5,7 @@
     <title>Annonces</title>
 </head>
 <body>
+
     <nav class="navbar navbar-expand-sm navbar-light bg-light ">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -22,9 +23,13 @@
               Type de bien
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <%=link_to "Maison",annonces_path(:sort =>"maison"),id:"bt-maison",class:"dropdown-item"%>
-              <%=link_to "Appartement",annonces_path(:sort =>"appart"),id:"bt-appart",class:"dropdown-item"%>
-
+              <%unless(  @sort.eql?("maison") || @sort.eql?("appartement") )%>
+              <%=link_to "Maison",annonces_path(:sort =>"maison",:precSort=>@sort),id:"bt-maison",class:"dropdown-item"%>
+              <%=link_to "Appartement",annonces_path(:sort =>"appartement",:precSort=>@sort),id:"bt-appart",class:"dropdown-item"%>
+              <%else%>
+              <%=link_to "Maison",annonces_path(:sort =>"maison",:precSort=>@secondSort),id:"bt-maison",class:"dropdown-item"%>
+              <%=link_to "Appartement",annonces_path(:sort =>"appartement",:precSort=>@secondSort),id:"bt-appart",class:"dropdown-item"%>      
+              <%end%>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -32,22 +37,34 @@
               Trier par
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <%=link_to "Du - cher au + cher",annonces_path(:sort =>"prixAsc"),id:"bt-appart",class:"dropdown-item"%>
-              <%=link_to "Du + cher au - cher",annonces_path(:sort =>"prixDesc"),id:"bt-appart",class:"dropdown-item"%>
-              <%=link_to "Plus recent",annonces_path(:sort =>"dateDesc"),id:"bt-appart",class:"dropdown-item"%>
-              <%=link_to "Moin recent",annonces_path(:sort =>"dateAsc"),id:"bt-appart",class:"dropdown-item"%>
+              <%unless(  @sort.eql?("prixAsc") || @sort.eql?("prixDesc") )%>
+                <%=link_to "Du - cher au + cher",annonces_path(:sort =>"prixAsc",:precSort=>@sort),id:"bt-appart",class:"dropdown-item"%>
+                <%=link_to "Du + cher au - cher",annonces_path(:sort =>"prixDesc",:precSort=>@sort),id:"bt-appart",class:"dropdown-item"%>
+              <%else%>
+                <%=link_to "Du - cher au + cher",annonces_path(:sort =>"prixAsc",:precSort=>@secondSort),id:"bt-appart",class:"dropdown-item"%>
+                <%=link_to "Du + cher au - cher",annonces_path(:sort =>"prixDesc",:precSort=>@secondSort),id:"bt-appart",class:"dropdown-item"%>
+              <%end%> 
+
+              <%unless(  @sort.eql?("dateAsc") || @sort.eql?("dateDesc") )%>
+                <%=link_to "Plus recent",annonces_path(:sort =>"dateDesc",:precSort=>@sort),id:"bt-appart",class:"dropdown-item"%>
+                <%=link_to "Moin recent",annonces_path(:sort =>"dateAsc",:precSort=>@sort),id:"bt-appart",class:"dropdown-item"%>
+              <%else%>
+                <%=link_to "Plus recent",annonces_path(:sort =>"dateDesc",:precSort=>@secondSort),id:"bt-appart",class:"dropdown-item"%>
+                <%=link_to "Moin recent",annonces_path(:sort =>"dateAsc",:precSort=>@secondSort),id:"bt-appart",class:"dropdown-item"%>
+              <%end%>
 
             </div>
           </li>
         </ul>
       </div>
     </nav>
-
+    <h5 class="badge badge-pill badge-info"><%=@sort%></h5>
+    <h5 class="badge badge-pill badge-info"><%=@secondSort%></h5>
     <div class="container-fluid">
       <div id="cardsannonces"class="row justify-content-around bg-light">
-        <%if @annonces.empty? then %>
+        <%if @annonces==nil || @annonces.empty? then %>
             <div class="alert alert-warning" role="alert">
-            Aucune annonce trouvée ! 
+              Aucune annonce trouvée ! 
             </div>
         <%else%>
             <%@annonces.each{ |an|%>
@@ -72,6 +89,9 @@
                           <%=an.capacite%> Chambres 
                         </p>
                         <p class="card-text text-truncate"><%=an.description%></p>
+                        <p class="card-subtitle mb-2 text-muted">
+                        <%=an.created_at.to_date%>
+                        </p>
                     </div>
                 </div>
             <%}%>

@@ -3,32 +3,20 @@ require 'colorize'
 class AnnoncesController < ApplicationController
     def index
         puts params
-        @annonces = Annonce.DateDesc
-        sort = params[:sort]
+        @annonces = Annonce.all
+        @sort = params[:sort]
+        @secondSort = params[:precSort]
         search = params[:search]
-        if( search)then
+        if(search)then
             @annonces = Annonce.search(search)
-        else
-            case sort
-                when "vente"
-                    @annonces = Annonce.ventes
-                when  "location"
-                    @annonces = Annonce.locations
-                when "appart"
-                    @annonces = Annonce.appartements
-                when  "maison"
-                    @annonces = Annonce.maisons
-                when  "dateDesc"
-                    @annonces = Annonce.DateAsc
-                when "dateAsc"
-                    @annonces = Annonce.DateDesc
-                when  "prixAsc"
-                    @annonces = Annonce.priceAsc
-                when  "prixDesc"
-                    @annonces = Annonce.priceDesc
-            end
+        elsif (@sort != nil && @secondSort!=nil)
+            @annonces = Annonce.sortby(Annonce.all,@sort)
+            puts "second sorting".colorize(:green)     
+            @annonces = Annonce.sortby(@annonces,@secondSort)
+                
+        elsif (@sort != nil)
+            @annonces = Annonce.sortby(Annonce.all,@sort)
         end
-
     end
 
     def show 

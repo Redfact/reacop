@@ -11,38 +11,27 @@ class Annonce < ApplicationRecord
     has_many :photos
 
 
-    def self.locations
-        Annonce.all.select{ |an| an.Location? == true}
-    end
-
-    def self.ventes
-        Annonce.all.select{ |an| an.Vente? == true}
+    def self.sortby(annonce,input)
+            case input
+            when "location"
+                annonce.select{ |an| an.Location? == true}
+            when "vente"
+                annonce.select{ |an| an.Vente? == true}
+            when "maison"
+                annonce.select{ |an| an.Maison? == true}
+            when "appartement"
+                annonce.select{ |an| an.Appartement? == true}
+            when "prixDesc"
+                annonce.sort_by(&:loyer_total).reverse
+            when "prixAsc"
+                annonce.sort_by(&:loyer_total)
+            when "dateDesc"
+                annonce.sort_by(&:created_at).reverse
+            when "dateAsc"
+                annonce.sort_by(&:created_at) 
+            end
     end
     
-    def self.appartements
-        Annonce.all.select{ |an| an.Appartement? == true}
-    end
-
-    def self.maisons
-        Annonce.all.select{ |an| an.Maison? == true}
-    end
-
-    def self.priceDesc
-        Annonce.all.order(loyer_total: :desc)
-    end
-
-    def self.priceAsc
-        Annonce.all.order(loyer_total: :asc)
-    end
-
-    def self.DateDesc
-        Annonce.all.order(created_at: :desc)
-    end
-
-    def self.DateAsc
-        Annonce.all.order(created_at: :asc)
-    end
-
     def to_s
         "Lieu :#{self.lieu}
         Capacite : #{self.capacite} chambres

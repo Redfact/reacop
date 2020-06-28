@@ -1,11 +1,16 @@
 gem 'faker'
 
 images =[
+    "https://lh3.googleusercontent.com/proxy/O1CN2Tly7GuGr2iy8fjhXqJ71_tMTP9ZVGqObjKDSRjCsD1U_kPweB2PNgG0loAFo7sQoRV3xeu3gnLnWsgX3iHxM7uJksV1LB12bGBv0xFaHRhu0eSf20bBLrYa-w6LIuMZ_2ZObN4MyVNBoH7_srorgG0Z7Q",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI0T8x1fGCe2OF4Wq5S5X6-k8A2H49yOvzEg&usqp=CAU",
+    "https://media-cdn.tripadvisor.com/media/vr-splice-j/00/f0/53/03.jpg",
+    "https://barak-a.com/wp-content/uploads/2019/04/SALON-2.png",
     "https://medias-neuf-be.avendrealouer.fr/Image/programme-neuf_4644447_D.jpg",
     "https://www.eiffage-immobilier.fr/files/live/sites/eiffage-immo/files/contributed/visuel2018/appartement-neuf-vitruve-capingheim-slider1.jpg",
     "https://www.urbat.com/medias/programmes/images/384_GILIBERT/programme-neuf-marseille-pavillon-9-384_TD_05_1_xl.jpg",
     "https://bonaparte-promotion.fr/sites/default/files/styles/head_xs/public/programmes/2_e_element_marseille_appartement_neuf_1.png?itok=OZ2saOQO",
-    "https://q-xx.bstatic.com/images/hotel/max1024x768/360/36001122.jpg"
+    "https://q-xx.bstatic.com/images/hotel/max1024x768/360/36001122.jpg",
+    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
 ]
 
 User.destroy_all
@@ -46,14 +51,18 @@ AnInteressant.destroy_all
         annonce_id: Annonce.ids.sample,
         user_id: User.ids.sample
     )
-
-    Photo.create(
-        url: images.sample,
-        annonce_id: Annonce.ids.sample
-    )
     Avatar.create(
         url: Faker::Avatar.image,
         user_id: Annonce.ids.sample
     )
 }
+
+Annonce.all.each do |an|
+    rand(3..5).times{
+        Photo.create(
+            url: images.sample,
+            annonce_id: an.id
+        )
+    }
+end 
 

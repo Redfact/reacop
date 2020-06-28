@@ -78,4 +78,32 @@
   </body>
 
 
+<footer class="page-footer bg-secondary">
+
+    <div class="container d-flex" >
+            <div class="justify-content-center">
+                  <%= image_tag "ReaTr.png" ,width:"150" ,height:"150" ,class:" align-top" ,alt:"Rea Brand"%>
+            </div>
+            <div class="p-2">
+              <h4 class="text-white font-weight-bold"><ins>Contact:</ins></h4>
+              <h6>
+                  <%= image_tag "phone.svg" ,width:"20" ,height:"20" ,class:" align-top" ,alt:"Rea Brand"%>
+                  <%= link_to "+261 34 99 066 58", "tel:#{+261349906658}",class:"font-weight-bold text-white" %>
+              </h6>
+              <h6>
+                  <%= link_to "https://www.facebook.com/REAImmoMadagascar/" do %>
+                  <%= image_tag "facebook.svg" ,width:"20" ,height:"20" ,class:" align-top" ,alt:"Rea Brand"%>
+                  <span class="font-weight-normaf text-white">fb.com/REAImmoMadagascar</span>
+                  <% end %>
+              </h6>
+              <h6>
+                  <%= image_tag "mail.svg" ,width:"20" ,height:"20" ,class:" align-top" ,alt:"Rea Brand"%>
+                  <%= mail_to "reagencym@gmail.com","reagencym@gmail.com",class:"font-weight-bold text-white" %>
+              </h6>
+            </div>
+    </div>
+
+</footer>
+
+
 </html>

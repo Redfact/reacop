@@ -3,6 +3,7 @@ require 'colorize'
 class AnnoncesController < ApplicationController
     def index
         puts params
+        @AlaUne = Annonce.AlaUne
         @annonces = Annonce.all
         @sort = params[:sort]
         @secondSort = params[:precSort]

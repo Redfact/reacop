@@ -1,14 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-      <%= javascript_include_tag "indexAnnonces.js" %>
     <title>Annonces</title>
 </head>
 <body>
 
+<h4><span class="badge badge-primary ml-3">A la une</span></h4>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <div class="card m-3 p-0 col-md-3 mx-auto">                  
+          <%= image_tag @AlaUne.first.photos.first.url, class:"card-img-top rounded" ,alt:"Empty image"%>
+            <div class="card-body">
+              <h4><%=link_to "#{@AlaUne.first.typeBien} à #{@AlaUne.first.lieu}" , annonce_path(id:@AlaUne.first.id) ,class:"card-title text-dark font-weight-bold" %></h4>
+              <p class="card-subtitle mb-2 text-dark font-weight-bold">À vendre</p>
+              <p class="card-subtitle mb-2 text-primary "><%=@AlaUne.first.loyer_total%>Ar </p>
+              <p class="card-subtitle mb-2 text-muted">
+               <%= image_tag "bed.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
+              <%=@AlaUne.first.capacite%> Chambres 
+               </p>
+              <p class="card-text text-truncate"><%=@AlaUne.first.description%></p>
+              <p class="card-subtitle mb-2 text-muted">
+                Postée le <%=@AlaUne.first.created_at.to_date%>
+              </p>
+          </div>
+      </div>
+  </div>
+            <%@AlaUne.last((@AlaUne.size-1)).each{ |an|%>
+            <div class="carousel-item">
+                  <div class="card m-3 p-0 col-md-3 mx-auto">
+                      
+                      <% if !an.photos.empty? %>
+                        <img class="card-img-top rounded" src=<%=an.photos.first.url%> alt="Card image cap"> 
+                        <% else %>
+                        <%= image_tag "ReaFront.jpg" , class:"card-img-top rounded" ,alt:"Empty image"%>
+                      <% end %>
+                      
+                      <div class="card-body">
+                          <h4><%=link_to "#{an.typeBien} à #{an.lieu}" , annonce_path(id:an.id) ,class:"card-title text-dark font-weight-bold" %></h4>
+                          <% if an.Vente? %>
+                          <p class="card-subtitle mb-2 text-dark font-weight-bold">À vendre</p>
+                          <% else %>
+                          <p class="card-subtitle mb-2 text-dark font-weight-bold">À louer</p>
+                          <% end %>
+                          <p class="card-subtitle mb-2 text-primary "><%=an.loyer_total%> Ar </p>
+                          <p class="card-subtitle mb-2 text-muted">
+                            <%= image_tag "bed.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
+                            <%=an.capacite%> Chambres 
+                          </p>
+                          <p class="card-text text-truncate"><%=an.description%></p>
+                          <p class="card-subtitle mb-2 text-muted">
+                          Postée le <%=an.created_at.to_date%>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+            <%}%>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+</div>
+
     <nav class="navbar navbar-expand-sm navbar-light bg-light ">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <%= image_tag "menu.svg" ,width:"20" ,height:"20" ,class:" align-top" ,alt:"Rea Brand"%>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
@@ -69,13 +133,11 @@
         <%else%>
             <%@annonces.each{ |an|%>
                 <div class="card m-3 p-0 col-md-3  ">
-                    
                     <% if !an.photos.empty? %>
                       <img class="card-img-top rounded" src=<%=an.photos.first.url%> alt="Card image cap"> 
                       <% else %>
                       <%= image_tag "ReaFront.jpg" , class:"card-img-top rounded" ,alt:"Empty image"%>
                     <% end %>
-                    
                     <div class="card-body">
                         <h4><%=link_to "#{an.typeBien} à #{an.lieu}" , annonce_path(id:an.id) ,class:"card-title text-dark font-weight-bold" %></h4>
                         <% if an.Vente? %>

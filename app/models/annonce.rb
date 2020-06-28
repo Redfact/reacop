@@ -10,6 +10,9 @@ class Annonce < ApplicationRecord
 
     has_many :photos
 
+    def self.AlaUne
+        Annonce.all.select{ |an| an.AlaUne == true}
+    end
 
     def self.sortby(annonce,input)
             case input

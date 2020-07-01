@@ -1,0 +1,39 @@
+<h4><span class="badge badge-secondary ml-3">A la une</span></h4>
+
+
+<div class="container-fluid">
+    <div id="cardsannonces" class="row justify-content-around bg-light">
+        <%if @AlaUne==nil || @AlaUne.empty? then %>
+        <div class="alert alert-warning" role="alert">
+            Aucune annonce trouvée !
+        </div>
+        <%else%>
+        <%@AlaUne.each{ |an|%>
+        <div class="card m-3 p-0 col-md-3  ">
+            <% if !an.photos.empty? %>
+            <img class="card-img-top rounded" src=<%=an.photos.first.url%> alt="Card image cap">
+            <% else %>
+            <%= image_tag "ReaFront.jpg" , class:"card-img-top rounded" ,alt:"Empty image"%>
+            <% end %>
+            <div class="card-body">
+                <h4><%=link_to "#{an.typeBien} à #{an.lieu}" , annonce_path(id:an.id) ,class:"card-title text-dark font-weight-bold" %></h4>
+                <% if an.Vente? %>
+                <p class="card-subtitle mb-2 text-dark font-weight-bold">À vendre</p>
+                <% else %>
+                <p class="card-subtitle mb-2 text-dark font-weight-bold">À louer</p>
+                <% end %>
+                <p class="card-subtitle mb-2 text-primary "><%=an.loyer_total%> Ar </p>
+                <p class="card-subtitle mb-2 text-muted">
+                    <%= image_tag "bed.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
+                    <%=an.capacite%> Chambres
+                </p>
+                <p class="card-text text-truncate"><%=an.description%></p>
+                <p class="card-subtitle mb-2 text-muted">
+                    Postée le <%=an.created_at.to_date%>
+                </p>
+            </div>
+        </div>
+        <%}%>
+            <%end%>
+    </div>
+</div>

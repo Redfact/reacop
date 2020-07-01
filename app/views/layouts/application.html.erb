@@ -4,7 +4,7 @@
     <title>Rea</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= favicon_link_tag asset_path('logo.png') %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -17,7 +17,7 @@
 
   </head>
   <nav class="navbar navbar-expand-lg navbar-dark"style="background-color: #00404f;">
-    <%= link_to annonces_path do %>
+    <%= link_to root_path do %>
     <%= image_tag "ReaTr.png" ,width:"175" ,height:"175" ,class:" align-top" ,alt:"Rea Brand"%>
     <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,12 +28,29 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
       </li>
-      <li class="nav-item">
-        <%= link_to 'Logements', annonces_path ,class:"nav-link"%>
+      <li class="nav-item active">
+        <%= link_to 'Accueil', accueil_path,class:"nav-link"%>
       </li>
-      <li class="nav-item">
-        <%= link_to 'A propos', about_path ,class:"nav-link"%>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Vente
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Chercher un bien', ventes_path ,class:"dropdown-item" %>        
+            <%= link_to 'Proposer un bien', '' ,class:"dropdown-item" %>        
+        </div>
       </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Location
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Chercher un bien', locations_path ,class:"dropdown-item" %>        
+            <%= link_to 'Proposer un bien', '' ,class:"dropdown-item" %>        
+        </div>
+      </li> 
 
       </li> 
       <li class="nav-item dropdown">
@@ -53,9 +70,14 @@
             <div class="dropdown-divider"></div>
             <%= link_to "Interface administrateur", admin_root_path ,class:"dropdown-item" %>
           <% end %>
-        
         </div>
-      </li>     
+      </li> 
+
+          
+      <li class="nav-item">
+        <%= link_to 'A propos', about_path ,class:"nav-link"%>
+      </li>
+  
 
     </ul>
       <%=form_tag( annonces_path, method: :get,class:"form-inline my-2 my-lg-0") do |f| %>
@@ -88,7 +110,7 @@
               <h4 class="text-white font-weight-bold"><ins>Contact:</ins></h4>
               <h6>
                   <%= image_tag "phone.svg" ,width:"20" ,height:"20" ,class:" align-top" ,alt:"Rea Brand"%>
-                  <%= link_to ENV['KEY'], "tel:#{ENV['KEY']}",class:"font-weight-bold text-white" %>
+                  <%= link_to '261 34 54 282 07', "tel:261 34 54 282 07",class:"font-weight-bold text-white" %>
               </h6>
               <h6>
                   <%= link_to "https://www.facebook.com/REAImmoMadagascar/" do %>

@@ -1,8 +1,8 @@
 require 'colorize'
-
 class AnnoncesController < ApplicationController
     def index
         puts params
+        puts "ENV: #{ENV['KEY']}".colorize(:red)
         @AlaUne = Annonce.AlaUne
         @annonces = Annonce.all
         @sort = params[:sort]

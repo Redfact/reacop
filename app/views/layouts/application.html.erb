@@ -88,7 +88,7 @@
               <h4 class="text-white font-weight-bold"><ins>Contact:</ins></h4>
               <h6>
                   <%= image_tag "phone.svg" ,width:"20" ,height:"20" ,class:" align-top" ,alt:"Rea Brand"%>
-                  <%= link_to "+261 34 99 066 58", "tel:#{+261349906658}",class:"font-weight-bold text-white" %>
+                  <%= link_to ENV['KEY'], "tel:#{ENV['KEY']}",class:"font-weight-bold text-white" %>
               </h6>
               <h6>
                   <%= link_to "https://www.facebook.com/REAImmoMadagascar/" do %>

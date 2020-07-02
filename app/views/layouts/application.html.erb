@@ -38,7 +38,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to 'Chercher un bien', ventes_path ,class:"dropdown-item" %>        
-            <%= link_to 'Proposer un bien', '' ,class:"dropdown-item" %>        
+            <%= link_to 'Proposer un bien', proposition_path(:typebien =>'Vente') ,class:"dropdown-item" %>        
         </div>
       </li>
       
@@ -48,7 +48,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to 'Chercher un bien', locations_path ,class:"dropdown-item" %>        
-            <%= link_to 'Proposer un bien', '' ,class:"dropdown-item" %>        
+            <%= link_to 'Proposer un bien', proposition_path(:typebien =>'Location') ,class:"dropdown-item" %>        
         </div>
       </li> 
 
@@ -116,6 +116,13 @@
                   <%= link_to "https://www.facebook.com/REAImmoMadagascar/" do %>
                   <%= image_tag "facebook.svg" ,width:"20" ,height:"20" ,class:" align-top" ,alt:"Rea Brand"%>
                   <span class="font-weight-normaf text-white">fb.com/REAImmoMadagascar</span>
+                  <% end %>
+              </h6>              
+              <h6>
+                
+                  <%= link_to "https://www.instagram.com/reamadagascar/" do %>
+                  <%= image_tag "instagram.svg" ,width:"20" ,height:"20" ,class:" align-top" ,alt:"Rea Brand"%>
+                  <span class="font-weight-normaf text-white">instagram.com/reamadagascar</span>
                   <% end %>
               </h6>
               <h6>

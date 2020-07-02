@@ -1,0 +1,17 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><%=@typebien%></h1>
+    <% if @typebien.eql?("Vente") %>
+    <p class="lead">Pour vous propriétaire de bien immobilier, REA s’engage à prendre en main la vente de votre bien. Notre prestation comprend :</p>
+    <% else %>
+    <p class="lead">Dans la recherche de votre prochain locataire ? REA a le service pour vous. Notre prestation comprend :</p>
+    <% end %>
+    
+  </div>
+</div>
+
+<% if @typebien.eql?("Vente") %>
+<%= render "ventes" %>
+<% else %>
+<%= render "locations" %>
+<%end%>

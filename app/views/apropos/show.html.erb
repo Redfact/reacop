@@ -1,39 +1,43 @@
 <style>
-.jumbotron
-{
-  background-image: url('/assets/ReaJumbo.png');
-  height: 75vh;
-  width: 75%;
-  margin-top: 1cm;
-  
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
- display: flex;
- align-items: center;
-}
+  .jumbotron {
+    background-image: url('/assets/ReaJumbo.png');
+    height: 75vh;
+    width: 75%;
+    margin-top: 1cm;
 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+  }
 </style>
 
 <div class="d-flex justify-content-around">
   <div class="jumbotron text-center">
 
     <div class="container">
-              <h2 class="text-white font-weight-bold">Contactez nous!</h2>
-              <h6>
-                  <%= image_tag "phone.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
-                  <%= link_to '+261 34 54 282 07', "tel:+261 34 54 282 07",class:"font-weight-bold text-white" %>
-              </h6>
-              <p>
-                  <%= link_to "https://www.facebook.com/REAImmoMadagascar/" do %>
-                  <%= image_tag "facebook.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
-                  <span class="font-weight-normaf text-white">fb.com/REAImmoMadagascar</span>
-                  <% end %>
-              </p>
-              <h5>
-                  <%= image_tag "mail.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
-                  <%= mail_to "reagencym@gmail.com","reagencym@gmail.com",class:"font-weight-bold text-white" %>
-              </h5>
+      <h2 class="text-white font-weight-bold">Contactez nous!</h2>
+      <h6>
+        <%= image_tag "phone.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
+        <%= link_to '+261 34 54 282 07', "tel:+261 34 54 282 07",class:"font-weight-bold text-white" %>
+      </h6>
+      <p>
+        <%= link_to "https://www.facebook.com/REAImmoMadagascar/" do %>
+        <%= image_tag "facebook.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
+        <span class="font-weight-normaf text-white">fb.com/REAImmoMadagascar</span>
+        <% end %>
+      </p>
+      <p>
+        <%= link_to "https://www.instagram.com/reamadagascar/" do %>
+        <%= image_tag "instagram.svg" ,width:"20" ,height:"20" ,class:" align-top" ,alt:"Rea Brand"%>
+        <span class="font-weight-normaf text-white">instagram.com/reamadagascar</span>
+        <% end %>
+      </p>
+      <h5>
+        <%= image_tag "mail.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
+        <%= mail_to "reagencym@gmail.com","reagencym@gmail.com",class:"font-weight-bold text-white" %>
+      </h5>
 
     </div>
   </div>
@@ -41,8 +45,8 @@
 
 <div class="container-fluid w-75">
   <div class="row justify-content-around">
-     <%= image_tag "fly1.jpg" , class:"card-img-top rounded col-md-4 p-3" ,alt:"Empty image"%>
-     <%= image_tag "fly2.jpg" , class:"card-img-top rounded col-md-4 p-3" ,alt:"Empty image"%>
-     <%= image_tag "fly3.jpg" , class:"card-img-top rounded col-md-4 p-3" ,alt:"Empty image"%>
+    <%= image_tag "fly1.jpg" , class:"card-img-top rounded col-md-4 p-3" ,alt:"Empty image"%>
+    <%= image_tag "fly2.jpg" , class:"card-img-top rounded col-md-4 p-3" ,alt:"Empty image"%>
+    <%= image_tag "fly3.jpg" , class:"card-img-top rounded col-md-4 p-3" ,alt:"Empty image"%>
   </div>
 </div>

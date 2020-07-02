@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'about',to: 'apropos#show'
   get 'locations',to: 'locations#show'
   get 'ventes' , to: 'ventes#show'
+  get 'proposition',to:'proposer_bien#show'
+
 
   namespace :admin do
       resources :users

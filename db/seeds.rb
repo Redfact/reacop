@@ -1,7 +1,12 @@
 gem 'faker'
 
+User.destroy_all
+Message.destroy_all
+Favori.destroy_all
+Annonce.destroy_all
+AnInteressant.destroy_all
+
 images =[
-    "https://lh3.googleusercontent.com/proxy/O1CN2Tly7GuGr2iy8fjhXqJ71_tMTP9ZVGqObjKDSRjCsD1U_kPweB2PNgG0loAFo7sQoRV3xeu3gnLnWsgX3iHxM7uJksV1LB12bGBv0xFaHRhu0eSf20bBLrYa-w6LIuMZ_2ZObN4MyVNBoH7_srorgG0Z7Q",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI0T8x1fGCe2OF4Wq5S5X6-k8A2H49yOvzEg&usqp=CAU",
     "https://media-cdn.tripadvisor.com/media/vr-splice-j/00/f0/53/03.jpg",
     "https://barak-a.com/wp-content/uploads/2019/04/SALON-2.png",
@@ -13,11 +18,9 @@ images =[
     "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
 ]
 
-User.destroy_all
-Message.destroy_all
-Favori.destroy_all
-Annonce.destroy_all
-AnInteressant.destroy_all
+# Temporary admin
+User.create(nom:"Randria", prenom:"Tantely" ,email:"tantelyrandria@ymail.com" , password:"123456",admin: true)
+
 10.times{
     first_name = Faker::Name.first_name
     last_name = Faker::Name.last_name

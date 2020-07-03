@@ -69,3 +69,5 @@ Annonce.all.each do |an|
     }
 end 
 
+   
+  

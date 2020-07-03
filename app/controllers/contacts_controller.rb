@@ -1,6 +1,7 @@
+require 'send_mail'
 class ContactsController < ApplicationController
-  def show
 
+  def show
     @commit=params[:commit]
     if( @commit.eql?("Envoyer") )
       @commit=true
@@ -12,11 +13,9 @@ class ContactsController < ApplicationController
       puts "Values".colorize(:green) , @commit , @email, @nom,@objet,@message
       if( !@email.empty? && !@nom.empty? && !@message.empty? )then
         @validate=true
+        SendMail.new(@nom,@email,@objet,@message)
       end
     end
-
   end
 
-  def new
-  end
 end

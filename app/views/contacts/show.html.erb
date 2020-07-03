@@ -1,0 +1,84 @@
+<div class="d-flex justify-content-around mb-5">
+    <% if @commit && !@validate %>
+        <div>
+
+            <h2>Contactez nous</h2>
+
+            <%= form_for(contactez_nous_path , method: :get) do |f| %>
+                <div class="field mt-3">
+                    <%= f.label :nom%> (obligatoire)<br />
+                    <%= f.text_field :nom , value: @nom%>
+                </div>
+                <% if @nom.empty? %>
+                <div class="text-danger">
+                    Veuillez founir votre nom
+                </div> 
+                <% end %>
+
+                <div class="field mt-3">
+                    <%= f.label :email %> (obligatoire)<br />
+                    <%= f.text_field :email ,value: @email%>
+                </div>
+                <% if @email.empty? %>
+                <div class="text-danger">
+                    Veuillez founir votre adresse email
+                </div>
+                <%end%>
+
+                <div class="field mt-3">
+                    <%= f.label :objet %><br />
+                    <%= f.text_field :objet ,value: @objet%>
+                </div>
+
+                <div class="field mt-3">
+                    <%= f.label :message %> (obligatoire)<br />
+                    <%= text_area_tag(:message,@message, size: "40x6") %>
+                </div>
+                <% if @message.empty? %>
+                <div class="text-danger">
+                    Message vide !
+                </div>
+                <% end %>
+                <div class="actions">
+                    <%= f.submit "Envoyer" , class:"m-3 btn btn-secondary"%>
+                </div>
+
+            <% end %>
+        </div>
+
+    <% elsif @commit && @validate %>
+        <div class="alert alert-success" role="alert">
+            Message envoyé !
+        </div>
+    <% else %>
+    <div>
+    
+        <h2>Contactez nous</h2>
+
+        <%= form_for(contactez_nous_path , method: :get) do |f| %>
+        <div class="field m-3">
+            <%= f.label :nom%> (obligatoire)<br />
+            <%= f.text_field :nom%>
+        </div>
+        <div class="field m-3">
+            <%= f.label :email %> (obligatoire)<br />
+            <%= f.text_field :email %>
+        </div>
+        <div class="field m-3">
+            <%= f.label :objet %><br />
+            <%= f.text_field :objet%>
+        </div>
+        <div class="field m-3">
+            <%= f.label :message %> (obligatoire)<br />
+            <%= text_area_tag(:message, "", size: "40x6") %>
+        </div>
+        <div class="actions">
+            <%= f.submit "Envoyer" , class:"m-3 btn btn-secondary"%>
+        </div>
+        <% end %>
+    </div>
+
+    <% end %>
+
+
+</div>

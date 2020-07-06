@@ -3,6 +3,7 @@ gem 'faker'
 User.destroy_all
 Message.destroy_all
 Favori.destroy_all
+Avatar.destroy_all 
 Annonce.destroy_all
 AnInteressant.destroy_all
 

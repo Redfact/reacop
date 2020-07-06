@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
       puts "Values".colorize(:green) , @commit , @email, @nom,@objet,@message
       if( !@email.empty? && !@nom.empty? && !@message.empty? )then
         @validate=true
-        SendMail.new(@nom,@email,@objet,@message)
+        SendMail.new(@nom,@email,@objet,@message).sendgrid
       end
     end
   end

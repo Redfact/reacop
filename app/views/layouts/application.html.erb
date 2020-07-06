@@ -69,7 +69,9 @@
           <% if current_user && user_signed_in? && current_user.admin? %>
             <div class="dropdown-divider"></div>
             <%= link_to "Interface administrateur", admin_root_path ,class:"dropdown-item" %>
+            <%= link_to "Creer une annonce", new_annonce_path ,class:"dropdown-item" %>
           <% end %>
+
         </div>
       </li> 
           

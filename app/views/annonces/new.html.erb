@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <title>Creation d'annonce</title>
+</head>
+
+<body>
+    <% if @error != nil %>
+        <div class="alert alert-danger" role="alert">
+            <% @error.each do |item| %>
+                <p><%=item%></p>   
+            <%end %>
+        </div>
+    <% end %>
+
+    <div class="d-flex justify-content-around mb-5">
+        <%= form_tag annonces_path(action: 'new'), method: "post" do %>
+        <div>
+            <%=file_field :photos, multiple: true%>
+        </div>
+
+        <div class="field mt-3">
+            <%= submit_tag "Creer annonce" %>
+        </div>
+
+        <% end %>
+    </div>
+
+    <div class="d-flex justify-content-around mb-5">
+        <%= form_for @annonce do |f| %>
+        <h1 class="field m-5 text-center">
+            Creation d'annonce
+        </h1>
+        <div class="field mt-3">
+            <%= f.label :lieu %>
+            <%= f.text_field :lieu%>
+        </div>
+
+        <div class="field mt-3">
+            <%= f.label :loyer_total %>
+            <%= f.number_field :loyer_total%>
+        </div>
+
+        <div class="field mt-3">
+            <%= f.label :capacite%>
+            <%= f.number_field :capacite%>
+        </div>
+
+        <div class="field mt-3">
+            <%= f.label :description %><br>
+            <%= f.text_area :description ,:rows=>5, :cols=>60%>
+        </div>
+
+        <div class="field mt-3">
+            <%= f.label"Type de vente"%><br>
+            <%= f.radio_button(:typeVente,"Vente") %>
+            <%= f.label(:vente, "Vente") %>
+            <%= f.radio_button(:typeVente, "Location") %>
+            <%= f.label(:location, "Location") %>
+        </div>
+
+        <div class="field mt-3">
+            <%= f.label'Type de bien'%><br>
+            <%= f.radio_button(:typeBien, "Appartement") %>
+            <%= f.label(:appartement, "Appartement") %>
+            <%= f.radio_button(:typeBien,"Maison") %>
+            <%= f.label(:maison, "Maison") %>
+        </div>
+
+        <div class="field mt-3">
+            <%= f.check_box(:AlaUne) %>
+            <%= f.label(:AlaUne,"Annonce à la une") %>
+        </div>
+
+        <div class="actions">
+            <%= f.submit value:"Créer annonce" %>
+        </div>
+
+        <%end%>
+
+    </div>
+
+</body>
+
+<footer>
+</footer>
+
+</html>

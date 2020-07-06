@@ -15,66 +15,68 @@
 
     <div class="d-flex justify-content-around mb-5">
         <%= form_tag annonces_path(action: 'new'), method: "post" do %>
-        <div>
-            <%=file_field :photos, multiple: true%>
-        </div>
+            <div>
+                <%=file_field :photos, multiple: true%>
+            </div>
 
-        <div class="field mt-3">
-            <%= submit_tag "Creer annonce" %>
-        </div>
+            <div class="field mt-3">
+                <%= submit_tag "Creer annonce" %>
+            </div>
 
-        <% end %>
-    </div>
+            <% end %>
+            </div>
 
-    <div class="d-flex justify-content-around mb-5">
-        <%= form_for @annonce do |f| %>
-        <h1 class="field m-5 text-center">
-            Creation d'annonce
-        </h1>
-        <div class="field mt-3">
-            <%= f.label :lieu %>
-            <%= f.text_field :lieu%>
-        </div>
+            <div class="d-flex justify-content-around mb-5 ">
+            <%= form_for @annonce ,class:"input-group mb-3" do |f|%>
+            
+            <h1 class="field m-5 text-center text-info font-weight-bold">
+                Creation d'annonce
+            </h1>
 
-        <div class="field mt-3">
-            <%= f.label :loyer_total %>
-            <%= f.number_field :loyer_total%>
-        </div>
+            <div class="field mt-3">
+                <%= f.label :lieu ,class:"font-weight-bold " %>
+                <%= f.text_field :lieu ,class:"border border-info rounded"%>
+            </div>
 
-        <div class="field mt-3">
-            <%= f.label :capacite%>
-            <%= f.number_field :capacite%>
-        </div>
+            <div class="field mt-3">
+                <%= f.label :loyer_total ,class:"font-weight-bold" %>
+                <%= f.number_field :loyer_total,class:"border border-info rounded"%>
+            </div>
 
-        <div class="field mt-3">
-            <%= f.label :description %><br>
-            <%= f.text_area :description ,:rows=>5, :cols=>60%>
-        </div>
+            <div class="field mt-3">
+                <%= f.label :capacite ,class:"font-weight-bold"%>
+                <%= f.number_field :capacite,class:"border border-info rounded"%>
+            </div>
 
-        <div class="field mt-3">
-            <%= f.label"Type de vente"%><br>
-            <%= f.radio_button(:typeVente,"Vente") %>
-            <%= f.label(:vente, "Vente") %>
-            <%= f.radio_button(:typeVente, "Location") %>
-            <%= f.label(:location, "Location") %>
-        </div>
+            <div class="field mt-3">
+                <%= f.label :description ,class:"font-weight-bold" %><br>
+                <%= f.text_area :description ,:rows=>5, :cols=>60 ,class:"border border-info rounded"%>
+            </div>
 
-        <div class="field mt-3">
-            <%= f.label'Type de bien'%><br>
-            <%= f.radio_button(:typeBien, "Appartement") %>
-            <%= f.label(:appartement, "Appartement") %>
-            <%= f.radio_button(:typeBien,"Maison") %>
-            <%= f.label(:maison, "Maison") %>
-        </div>
+            <div class="field mt-3">
+                <%= f.label"Type de vente" ,class:"font-weight-bold"%><br>
+                <%= f.radio_button(:typeVente,"Vente") %>
+                <%= f.label(:vente, "Vente") %>
+                <%= f.radio_button(:typeVente, "Location") %>
+                <%= f.label(:location, "Location") %>
+            </div>
 
-        <div class="field mt-3">
-            <%= f.check_box(:AlaUne) %>
-            <%= f.label(:AlaUne,"Annonce à la une") %>
-        </div>
+            <div class="field mt-3">
+                <%= f.label'Type de bien' ,class:"font-weight-bold"%><br>
+                <%= f.radio_button(:typeBien, "Appartement") %>
+                <%= f.label(:appartement, "Appartement") %>
+                <%= f.radio_button(:typeBien,"Maison") %>
+                <%= f.label(:maison, "Maison") %>
+            </div>
 
-        <div class="actions">
-            <%= f.submit value:"Créer annonce" %>
-        </div>
+            <div class="field mt-3">
+                <%= f.check_box(:AlaUne)%>
+                <%= f.label(:AlaUne,"Annonce à la une",class:"font-weight-bold") %>
+            </div>
+
+            <div class="actions">
+                <%= f.submit value:"Créer annonce", class:"btn btn-info" %>
+            </div>
 
         <%end%>
 

@@ -1,2 +1,2 @@
 # README
-http://wwww.reagency-mada.com/
+reagency-mada.com/

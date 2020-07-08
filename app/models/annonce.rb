@@ -9,7 +9,7 @@ class Annonce < ApplicationRecord
     has_many :UsersFavoris, through: :favoris , source: :user
 
     has_many :photos
-
+    
     validates :lieu , presence: true
     validates :typeBien , presence: true
     validates :typeVente , presence: true

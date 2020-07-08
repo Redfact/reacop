@@ -4,17 +4,17 @@
 
   <div class="carousel-inner w-100 h-25 mx-auto" role="listbox" >
     <div class="carousel-item active m-2">     
-      <% if !@photos.empty? %>
-          <a href= <%=@photos.last.url%> >
+    <% if !@photos.empty? %>
+          <a href= <%=@photos.first.url%> >
           <img class="d-block w-100 "src=<%=@photos.last.url%> alt="First slide">
           </a>
           <% else %>
           <%= image_tag "ReaFront.jpg" , width:"400" ,height:"525", class:"card-img-top rounded" ,alt:"Empty image"%>
-      <% end %>
+    <% end %>
     </div>
   
   <% if !@photos.empty? %>
-    <% @photos.each do |photo| %>    
+    <% @photos.last(@photos.size-1).each do |photo| %>    
       <div class="carousel-item m-2">
       <a href= <%=photo.url%> >
          <img class="d-block w-100 " src=<%=photo.url%> alt="photo">

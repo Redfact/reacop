@@ -1,4 +1,5 @@
 require 'colorize'
+require 'upload'
 class AnnoncesController < ApplicationController
     def index
         puts params
@@ -34,19 +35,35 @@ class AnnoncesController < ApplicationController
     end
 
     def create
-        puts "Controller Annonce create",annonce_params
+        puts "Controller Annonce create".colorize(:green),params
+        puts "files".colorize(:cyan)
+        fileArray = params[:annonce][:images]
+
         @annonce = Annonce.new(annonce_params)
         puts @annonce
         @annonce.save
+
         if( @annonce.save)
+            @urls=Array.new
+
+            if( fileArray != nil )
+                fileArray.each do |i|
+                    puts i.tempfile.path
+                    image=Upload.new.image(i.tempfile.path)
+                    puts "url:".colorize(:light_green),image.link
+                    @urls<<"http://imgur.com/#{image.id}m.jpg"
+                end
+            end
+
+            #link imgur url image to current annonce
+            @urls.each{ |url|
+                Photo.create(url: url,annonce_id: @annonce.id)
+            }
             redirect_to(root_path(:create_annonce=>true))
         else
             @error = @annonce.errors.full_messages
             redirect_to new_annonce_path(:error=>@error ,:annonce => annonce_params)
         end
-    end
-
-    def valide_params
     end
 
     def annonce_params

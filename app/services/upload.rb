@@ -9,26 +9,10 @@ class Upload
         @account = @session.account
     end
 
-    # Warning , upload image but not on you imgur account
-    def file(path)
-        client = Imgur.new('8129b215ad04853')
-
-        image = Imgur::LocalImage.new(path, title: 'Awesome photo')
-
-        uploaded = client.upload(image)
-
-        album = client.new_album(uploaded, title: 'MyAlbum')
-
-        puts uploaded.link , uploaded.id
-        puts album.link , album.id   
-    end
-
-    
     def image(path)
        if( @session != nil)
            image=@session.image.image_upload(path)
        end
        return image
     end
-
 end

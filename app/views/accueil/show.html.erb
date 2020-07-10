@@ -1,10 +1,17 @@
-<h4><span class="badge badge-secondary ml-3">A la une</span></h4>
-
 <% if params[:create_annonce]!= nil %>
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-info" role="alert">
         Nouvelle annonce crée !
     </div>
 <% end %>
+
+<% if params[:contact] %>
+    <div class="alert alert-success" role="alert">
+        Message envoyé !
+    </div>
+<% end %>
+
+
+<h4><span class="badge badge-secondary ml-3">A la une</span></h4>
 
 <div class="container-fluid">
     <div id="cardsannonces" class="row justify-content-around bg-light">

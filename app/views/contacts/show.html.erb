@@ -2,12 +2,15 @@
     <% if @commit && !@validate %>
         <div>
 
-            <h2>Contactez nous</h2>
+            <h2 class="mb-5 text-center text-info font-weight-bold">
+            Contactez nous
+            </h2>
 
             <%= form_for(contactez_nous_path , method: :get) do |f| %>
+
                 <div class="field mt-3">
-                    <%= f.label :nom%> (obligatoire)<br />
-                    <%= f.text_field :nom , value: @nom%>
+                    <%= f.label :nom ,class:"font-weight-bold text-dark"%>*<br />
+                    <%= f.text_field :nom , value: @nom,class:"form-control mr-sm-2 border border-info rounded"%>
                 </div>
                 <% if @nom.empty? %>
                 <div class="text-danger">
@@ -16,8 +19,8 @@
                 <% end %>
 
                 <div class="field mt-3">
-                    <%= f.label :email %> (obligatoire)<br />
-                    <%= f.text_field :email ,value: @email%>
+                    <%= f.label :email ,class:"font-weight-bold text-dark"%>*<br />
+                    <%= f.text_field :email ,value: @email,class:"form-control mr-sm-2 border border-info rounded"%>
                 </div>
                 <% if @email.empty? %>
                 <div class="text-danger">
@@ -26,13 +29,13 @@
                 <%end%>
 
                 <div class="field mt-3">
-                    <%= f.label :objet %><br />
-                    <%= f.text_field :objet ,value: @objet%>
+                    <%= f.label :objet ,class:"font-weight-bold text-dark" %>*<br />
+                    <%= f.text_field :objet ,value: @objet,class:"form-control mr-sm-2 border border-info rounded"%>
                 </div>
 
                 <div class="field mt-3">
-                    <%= f.label :message %> (obligatoire)<br />
-                    <%= text_area_tag(:message,@message, size: "40x6") %>
+                    <%= f.label :message ,class:"font-weight-bold text-dark" %>*<br />
+                    <%= text_area_tag(:message,@message, size: "40x6",class:"form-control mr-sm-2 border border-info rounded") %>
                 </div>
                 <% if @message.empty? %>
                 <div class="text-danger">
@@ -40,7 +43,10 @@
                 </div>
                 <% end %>
                 <div class="actions">
-                    <%= f.submit "Envoyer" , class:"m-3 btn btn-secondary"%>
+                    <%= f.submit "Envoyer" , class:"m-3 btn btn-success"%>
+                    <p class="text-secondary text-sm ml-3"> 
+                        <small> * Champ obligatoire</small>
+                    </p>
                 </div>
 
             <% end %>
@@ -53,32 +59,34 @@
     <% else %>
     <div>
     
-        <h2>Contactez nous</h2>
+        <h2 class="field mb-5 text-center text-info font-weight-bold">Contactez nous</h2>
 
         <%= form_for(contactez_nous_path , method: :get) do |f| %>
         <div class="field m-3">
-            <%= f.label :nom%> (obligatoire)<br />
-            <%= f.text_field :nom%>
+            <%= f.label :nom , class:"font-weight-bold text-dark"%>*<br />
+            <%= f.text_field :nom,class:"form-control mr-sm-2 border border-info rounded"%>
         </div>
         <div class="field m-3">
-            <%= f.label :email %> (obligatoire)<br />
-            <%= f.text_field :email %>
+            <%= f.label :email ,class:"font-weight-bold text-dark" %>*<br />
+            <%= f.text_field :email,class:"form-control mr-sm-2 border border-info rounded" %>
         </div>
         <div class="field m-3">
-            <%= f.label :objet %><br />
-            <%= f.text_field :objet%>
+            <%= f.label :objet ,class:"font-weight-bold text-dark" %>*<br />
+            <%= f.text_field :objet,class:"form-control mr-sm-2 border border-info rounded"%>
         </div>
         <div class="field m-3">
-            <%= f.label :message %> (obligatoire)<br />
-            <%= text_area_tag(:message, "", size: "40x6") %>
+            <%= f.label :message ,class:"font-weight-bold text-dark"%>*<br />
+            <%= text_area_tag(:message, "", size: "40x6",class:"form-control mr-sm-2 border border-info rounded") %>
         </div>
         <div class="actions">
-            <%= f.submit "Envoyer" , class:"m-3 btn btn-secondary"%>
+            <%= f.submit "Envoyer" , class:"m-3 btn btn-success"%>
+            <p class="text-secondary text-sm ml-3"> 
+                <small> * Champ obligatoire</small>
+            </p>
         </div>
         <% end %>
     </div>
 
     <% end %>
-
-
 </div>
+

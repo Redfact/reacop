@@ -36,9 +36,9 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Vente
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to 'Chercher un bien', ventes_path ,class:"dropdown-item" %>        
-            <%= link_to 'Proposer un bien', proposition_path(:typebien =>'Vente') ,class:"dropdown-item" %>        
+        <div class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
+            <%= link_to 'Chercher un bien', ventes_path ,class:"dropdown-item text-light" %>        
+            <%= link_to 'Proposer un bien', proposition_path(:typebien =>'Vente') ,class:"dropdown-item text-light" %>        
         </div>
       </li>
       
@@ -46,9 +46,9 @@
         <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Location
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to 'Chercher un bien', locations_path ,class:"dropdown-item" %>        
-            <%= link_to 'Proposer un bien', proposition_path(:typebien =>'Location') ,class:"dropdown-item" %>        
+        <div class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
+            <%= link_to 'Chercher un bien', locations_path ,class:"dropdown-item text-light" %>        
+            <%= link_to 'Proposer un bien', proposition_path(:typebien =>'Location') ,class:"dropdown-item text-light" %>        
         </div>
       </li> 
 
@@ -57,31 +57,35 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Profil
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu bg-info" aria-labelledby="navbarDropdown">
           <% if current_user && user_signed_in? %>
-            <%= link_to 'Compte', edit_user_registration_path(current_user), class:"dropdown-item"  %>
-            <%= link_to 'Se deconnecter', destroy_user_session_path ,method: :delete , class:"dropdown-item" %>
+            <%= link_to 'Compte', edit_user_registration_path(current_user), class:"dropdown-item text-light"  %>
+            <%= link_to 'Se deconnecter', destroy_user_session_path ,method: :delete , class:"dropdown-item text-warning" %>
           <%else%>
-            <%= link_to 'Se connecter', new_user_session_path ,class:"dropdown-item" %>
-            <%= link_to "S'inscrire", new_user_registration_path ,class:"dropdown-item" %>
+            <%= link_to 'Se connecter', new_user_session_path ,class:"dropdown-item text-light" %>
+            <%= link_to "S'inscrire", new_user_registration_path ,class:"dropdown-item text-light" %>
           <%end%>
           
           <% if current_user && user_signed_in? && current_user.admin? %>
             <div class="dropdown-divider"></div>
-            <%= link_to "Interface administrateur", admin_root_path ,class:"dropdown-item" %>
-            <%= link_to "Creer une annonce", new_annonce_path ,class:"dropdown-item" %>
+            <%= link_to "Interface administrateur", admin_root_path ,class:"dropdown-item text-light" %>
+            <%= link_to "Creer une annonce", new_annonce_path ,class:"dropdown-item text-light" %>
           <% end %>
 
         </div>
       </li> 
-          
-      <li class="nav-item">
-        <%= link_to 'A propos', about_path ,class:"nav-link"%>
-      </li>      
 
-      <li class="nav-item">
-        <%= link_to 'Contactez nous', contactez_nous_path ,class:"nav-link"%>
-      </li>      
+      <li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          A propos
+        </a>
+        <div class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
+            <%= link_to 'A propos', about_path ,class:"dropdown-item text-light "%>
+            <%= link_to 'Contactez nous', contactez_nous_path ,class:"dropdown-item text-light "%>
+        </div>
+      </li>
+         
+    
       
       <li class="nav-item">
 

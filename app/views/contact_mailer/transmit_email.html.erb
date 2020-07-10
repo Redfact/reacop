@@ -1,14 +1,21 @@
 <html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <h1>Message de <%=@nom%></h1>
-    <p>
-      <%=@message%>
-    </p>
 
-    <p>Message envoyé depuis le mail:  <a href=<%=@email%> ><%=@email%> </a> </p>
-    <p>" Rea ,le partenaire qui est là "</p>
-  </body>
+<head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+
+<body>
+    <h2>Message de <%=@nom%> </h2><br><br>
+
+    <blockquote cite="http://www.worldwildlife.org/who/index.html">
+        <%=@message%>
+    </blockquote><br><br>
+
+    <p>Message envoyé depuis le mail: <br>
+        <span style="color:blue;font-weight:bold">
+            <%= mail_to @email , @email %>
+        </span>
+    </p>
+</body>
+
 </html>

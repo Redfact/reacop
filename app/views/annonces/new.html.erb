@@ -13,7 +13,7 @@
     </div>
     <% end %>
 
-    <div class="d-flex justify-content-around mb-5 ">
+    <div class="d-flex justify-content-around mb-5 pl-4 pr-4">
         <%= form_for @annonce ,class:"input-group" do |f|%>
 
         <h1 class="field mb-5 text-center text-info font-weight-bold">
@@ -22,22 +22,22 @@
 
         <div class="field mt-3">
             <%= f.label :lieu ,class:"font-weight-bold text-dark" %>
-            <%= f.text_field :lieu ,class:"border border-info rounded"%>
+            <%= f.text_field :lieu ,class:"form-control mr-sm-2 border border-info rounded"%>
         </div>
 
         <div class="field mt-3">
-            <%= f.label :loyer_total ,class:"font-weight-bold text-dark" %>
-            <%= f.number_field :loyer_total,class:"border border-info rounded"%>
+            <%= f.label :prix ,class:"font-weight-bold text-dark" %>
+            <%= f.number_field :loyer_total,class:"form-control mr-sm-2 border border-info rounded"%>
         </div>
 
         <div class="field mt-3">
             <%= f.label :capacite ,class:"font-weight-bold text-dark"%>
-            <%= f.number_field :capacite,class:"border border-info rounded"%>
+            <%= f.number_field :capacite,class:"form-control mr-sm-2 border border-info rounded"%>
         </div>
 
         <div class="field mt-3">
             <%= f.label :description ,class:"font-weight-bold text-dark" %><br>
-            <%= f.text_area :description ,:rows=>5, :cols=>60 ,class:"border border-info rounded"%>
+            <%= f.text_area :description ,:rows=>5, :cols=>60 ,class:" form-control mr-sm-2 border border-info rounded"%>
         </div>
 
         <div class="field mt-3">

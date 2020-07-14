@@ -20,7 +20,7 @@
     <div class="carousel-item active m-2">     
     <% if !@photos.empty? %>
           <a href= <%=@photos.first.url%> >
-          <img class="d-block img-fluid"src=<%=@photos.last.url%> alt="First slide">
+          <img class="d-block img-fluid mx-auto"src=<%=@photos.last.url%> alt="First slide">
           </a>
           <% else %>
           <%= image_tag "ReaFront.jpg" , width:"400" ,height:"525", class:"card-img-top rounded" ,alt:"Empty image"%>
@@ -31,7 +31,7 @@
     <% @photos.last(@photos.size-1).each do |photo| %>    
       <div class="carousel-item m-2">
       <a href= <%=photo.url%> >
-         <img class="d-block  img-fluid" src=<%=photo.url%> alt="photo">
+         <img class="d-block  img-fluid mx-auto" src=<%=photo.url%> alt="photo">
       </a>
       </div>
     <% end %>

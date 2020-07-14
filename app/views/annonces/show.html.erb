@@ -7,6 +7,11 @@
             white-space: -o-pre-wrap;
             word-wrap: break-word;
          }
+          .image {
+            height: 100vh;
+            width: 100vh;
+            object-fit: cover;
+           }   
       </style>
 
 <div id="carouselExampleIndicators" class="carousel slide w-75 mx-auto col-sm m-5 " data-ride="carousel">
@@ -15,7 +20,7 @@
     <div class="carousel-item active m-2">     
     <% if !@photos.empty? %>
           <a href= <%=@photos.first.url%> >
-          <img class="d-block w-100 "src=<%=@photos.last.url%> alt="First slide">
+          <img class="d-block w-100 image"src=<%=@photos.last.url%> alt="First slide">
           </a>
           <% else %>
           <%= image_tag "ReaFront.jpg" , width:"400" ,height:"525", class:"card-img-top rounded" ,alt:"Empty image"%>

@@ -9,7 +9,7 @@
     }
 
     .fit-image {
-      width: 900px;
+      max-width: 900px;
       object-fit: cover;
       height: 500px;
       /* only if you want fixed height */
@@ -22,8 +22,8 @@
   <div class="carousel-inner mx-auto" role="listbox">
     <div class="carousel-item active m-2">
       <% if !@photos.empty? %>
-      <a href=<%=@photos.last.url%>>
-        <img class="d-block mx-auto img-responsive fit-image" src=<%=@photos.last.url%> alt="First slide">
+      <a class="text-center" href=<%=@photos.first.url%>>
+        <img class="d-block mx-auto img-responsive fit-image" src=<%=@photos.first.url%> alt="First slide">
       </a>
       <% else %>
       <%= image_tag "ReaFront.jpg" , width:"400" ,height:"525", class:"card-img-top rounded" ,alt:"Empty image"%>
@@ -32,9 +32,9 @@
 
     <% if !@photos.empty? %>
     <% @photos.each do |photo| %>
-    <div class="carousel-item m-2">
-      <a href=<%=photo.url%>>
-        <img class="d-block mx-auto img-responsive fit-image"src=<%=photo.url%> alt="photo">
+    <div class="carousel-item m-2 text-center">
+      <a class="text-center" href=<%=photo.url%>>
+        <img class="d-block mx-auto img-responsive fit-image "src=<%=photo.url%> alt="photo">
       </a>
     </div>
     <% end %>

@@ -23,6 +23,8 @@ class AnnonceDashboard < Administrate::BaseDashboard
     contrat_partiel: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    AlaUne:Field::Boolean,
+
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -35,45 +37,29 @@ class AnnonceDashboard < Administrate::BaseDashboard
   lieu
   loyer_total
   created_at
-  description
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  AnInteressants
-  UsersInterested
-  favoris
-  UsersFavoris
-  photos
-  id
-  lieu
-  capacite
-  loyer_total
-  loyer_partiel
-  place_libre
-  description
-  contrat_partiel
-  created_at
-  updated_at
+    AlaUne
+    lieu
+    capacite
+    loyer_total
+    description
+    photos
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  AnInteressants
-  UsersInterested
-  favoris
-  UsersFavoris
-  photos
+  AlaUne
   lieu
   capacite
   loyer_total
-  loyer_partiel
-  place_libre
   description
-  contrat_partiel
+  photos
   ].freeze
 
   # COLLECTION_FILTERS

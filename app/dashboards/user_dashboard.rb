@@ -47,39 +47,20 @@ class UserDashboard < Administrate::BaseDashboard
   admin
   nom
   prenom
-  avatar
-  disponible
-  age
-  number
-  social
-  introduction
   email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  remember_created_at
   created_at
-  updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  admin
-  nom
-  prenom
-  avatar
-  disponible
-  age
-  number
-  social
-  introduction
-  email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  remember_created_at
+    id
+    admin
+    nom
+    prenom
+    email
+    created_at
   ].freeze
 
   # COLLECTION_FILTERS
@@ -93,7 +74,6 @@ class UserDashboard < Administrate::BaseDashboard
   #     open: ->(resources) { resources.where(open: true) }
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
-
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #

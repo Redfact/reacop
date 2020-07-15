@@ -1,3 +1,12 @@
+<style>
+.hmin{
+  max-height: 500px;
+  object-fit:scale-down;
+
+}
+
+</style>
+
 <% if params[:create_annonce]!= nil %>
     <div class="alert alert-info" role="alert">
         Nouvelle annonce crée !
@@ -23,7 +32,7 @@
         <%@AlaUne.each{ |an|%>
         <div class="card m-3 p-0 col-md-3  ">
             <% if !an.photos.empty? %>
-            <img class="card-img-top rounded" src=<%=an.photos.first.url%> alt="Card image cap">
+            <img class="card-img-top rounded hmin" src=<%=an.photos.first.url%> alt="Card image cap">
             <% else %>
             <%= image_tag "ReaFront.jpg" , class:"card-img-top rounded" ,alt:"Empty image"%>
             <% end %>

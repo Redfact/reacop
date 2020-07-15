@@ -26,6 +26,8 @@ class AnnoncesController < ApplicationController
         @annonce = Annonce.find(params[:id])
         @place_libre= @annonce.place_libre
         @photos = @annonce.photos
+        @first = @photos.first
+        @lasts = @photos.drop(1)
         @prix = number_to_currency(@annonce.loyer_total, unit: "Ar", separator: ",", delimiter: ".", format: "%n %u",precision:0)
 
 

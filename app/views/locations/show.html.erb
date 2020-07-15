@@ -1,4 +1,4 @@
-<h5 class="badge badge-pill badge-info"><%=@sort%></h5>
+<h5 class="badge badge-pill badge-info ml-3 mb-3"><%=@sort%></h5>
 <h5 class="badge badge-pill badge-info"><%=@secondSort%></h5>
 <nav class="navbar navbar-expand-sm navbar-light bg-light ">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,7 +71,9 @@
                 <% else %>
                 <p class="card-subtitle mb-2 text-dark font-weight-bold">À louer</p>
                 <% end %>
-                <p class="card-subtitle mb-2 text-primary "><%=an.loyer_total%> Ar </p>
+                <p class="card-subtitle mb-2 text-primary ">
+                    <%=number_to_currency(an.loyer_total, unit: "Ar", separator: ",", delimiter: ".", format: "%n %u",precision:0)%>                
+                </p>
                 <p class="card-subtitle mb-2 text-muted">
                     <%= image_tag "bed.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
                     <%=an.capacite%> Chambres

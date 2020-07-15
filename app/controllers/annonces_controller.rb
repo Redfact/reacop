@@ -1,5 +1,7 @@
 require 'colorize'
 require 'upload'
+include ActionView::Helpers::NumberHelper
+
 class AnnoncesController < ApplicationController
     def index
         puts params
@@ -24,6 +26,9 @@ class AnnoncesController < ApplicationController
         @annonce = Annonce.find(params[:id])
         @place_libre= @annonce.place_libre
         @photos = @annonce.photos
+        @prix = number_to_currency(@annonce.loyer_total, unit: "Ar", separator: ",", delimiter: ".", format: "%n %u",precision:0)
+
+
     end
 
     def new

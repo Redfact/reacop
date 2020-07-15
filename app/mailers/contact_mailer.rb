@@ -3,7 +3,7 @@ class ContactMailer < ApplicationMailer
         @nom=nom
         @email=email
         @message = message
-        mail(from: "no_reply@reagency-mada.com", to:"reagencym@gmail.com",
+        mail(from: "no_reply@reagency-mada.com", to:"rea@reagency-mada.com",
              subject: "Mail client")
     end 
 end

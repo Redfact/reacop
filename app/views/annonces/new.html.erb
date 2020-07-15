@@ -27,12 +27,14 @@
 
         <div class="field mt-3">
             <%= f.label :prix ,class:"font-weight-bold text-dark" %>
-            <%= f.number_field :loyer_total,class:"form-control mr-sm-2 border border-info rounded"%>
+            <%= f.number_field :loyer_total,min:"0",value:"0",
+            class:"form-control mr-sm-2 border border-info rounded"%>
         </div>
 
         <div class="field mt-3">
             <%= f.label :capacite ,class:"font-weight-bold text-dark"%>
-            <%= f.number_field :capacite,class:"form-control mr-sm-2 border border-info rounded"%>
+            <%= f.number_field :capacite,min:"1",value:"1",
+            class:"form-control mr-sm-2 border border-info rounded"%>
         </div>
 
         <div class="field mt-3">
@@ -59,12 +61,11 @@
 
 
         <div class="field mt-3">
-            <!-- <input type="file" id="global-files-button" class="nodisplay" name="files[]" multiple="" accept=".jpg,.jpeg,.png,.gif,.apng,.tiff,.tif,.bmp,.xcf,.webp,.mp4,.mov"> -->
-            <%=f.file_field :images ,multiple:true%>
+            <%=f.file_field :images ,multiple:true,
+            accept:'image/png,image/gif,image/jpeg'
+            %>
         </div>    
             
-
-
         <div class="field mt-3">
             <%= f.check_box(:AlaUne)%>
             <%= f.label(:AlaUne,"Annonce à la une",class:"font-weight-bold text-dark") %>

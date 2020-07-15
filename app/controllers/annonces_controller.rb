@@ -51,7 +51,7 @@ class AnnoncesController < ApplicationController
                     puts i.tempfile.path
                     image=Upload.new.image(i.tempfile.path)
                     puts "url:".colorize(:light_green),image.link
-                    @urls<<"http://imgur.com/#{image.id}m.jpg"
+                    @urls<<image.link
                 end
             end
 

@@ -1,42 +1,44 @@
-      <style>
-         pre {
-            overflow-x: auto;
-            white-space: pre-wrap;
-            white-space: -moz-pre-wrap;
-            white-space: -pre-wrap;
-            white-space: -o-pre-wrap;
-            word-wrap: break-word;
-         }
-          .image {
-            height: 100vh;
-            width: 100vh;
-            object-fit: cover;
-           }   
-      </style>
+<style>
+    pre {
+      overflow-x: auto;
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
 
-<div id="carouselExampleIndicators" class="carousel slide w-75 mx-auto col-sm m-5 " data-ride="carousel">
+    .fit-image {
+      width: 100%;
+      object-fit: cover;
+      height: 500px;
+      /* only if you want fixed height */
+    }
+</style>
 
-  <div class="carousel-inner w-100 h-25 mx-auto" role="listbox" >
-    <div class="carousel-item active m-2">     
-    <% if !@photos.empty? %>
-          <a href= <%=@photos.first.url%> >
-          <img class="d-block img-fluid mx-auto"src=<%=@photos.last.url%> alt="First slide">
-          </a>
-          <% else %>
-          <%= image_tag "ReaFront.jpg" , width:"400" ,height:"525", class:"card-img-top rounded" ,alt:"Empty image"%>
-    <% end %>
-    </div>
-  
-  <% if !@photos.empty? %>
-    <% @photos.last(@photos.size-1).each do |photo| %>    
-      <div class="carousel-item m-2">
-      <a href= <%=photo.url%> >
-         <img class="d-block  img-fluid mx-auto" src=<%=photo.url%> alt="photo">
+<div id="carouselExampleIndicators" class="carousel slide  mx-auto col-sm m-5 " data-ride="carousel">
+
+  <div class="carousel-inner h-25 mx-auto" role="listbox">
+    <div class="carousel-item active m-2">
+      <% if !@photos.empty? %>
+      <a href=<%=@photos.last.url%>>
+        <img class="d-block mx-auto img-responsive fit-image" src=<%=@photos.last.url%> alt="First slide">
       </a>
-      </div>
+      <% else %>
+      <%= image_tag "ReaFront.jpg" , width:"400" ,height:"525", class:"card-img-top rounded" ,alt:"Empty image"%>
+      <% end %>
+    </div>
+
+    <% if !@photos.empty? %>
+    <% @photos.each do |photo| %>
+    <div class="carousel-item m-2">
+      <a href=<%=photo.url%>>
+        <img class="d-block mx-auto img-responsive fit-image"src=<%=photo.url%> alt="photo">
+      </a>
+    </div>
     <% end %>
-  <% end %>
-  
+    <% end %>
+
   </div>
   <% if !@photos.empty? || @photos.size == 1 %>
   <a class="carousel-control-prev bg-white" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -53,15 +55,15 @@
 <div class="card mt-3 mb-5" style="width: 100%;">
   <div class="card-body">
     <h3 class="card-title text-dark font-weight-bold"><%=@annonce.lieu%></h3>
-      <% if @annonce.Vente? %>
-        <p class="card-subtitle mb-2 text-dark font-weight-bold">À vendre</p>
-        <% else %>
-        <p class="card-subtitle mb-2 text-dark font-weight-bold">À louer</p>
-      <% end %>
+    <% if @annonce.Vente? %>
+    <p class="card-subtitle mb-2 text-dark font-weight-bold">À vendre</p>
+    <% else %>
+    <p class="card-subtitle mb-2 text-dark font-weight-bold">À louer</p>
+    <% end %>
     <p class="card-subtitle mb-2 text-primary"><%=@annonce.loyer_total%> Ar</p>
     <p class="card-subtitle mb-2 text-muted">
       <%= image_tag "bed.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
-      <%=@annonce.capacite%> Chambres 
+      <%=@annonce.capacite%> Chambres
     </p>
     <pre class="card-text text-secondary"><%=@annonce.description%></pre>
   </div>

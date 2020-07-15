@@ -1,4 +1,5 @@
 class Annonce < ApplicationRecord
+    before_destroy :destroy_images
     enum typeBien: { Appartement: 0 , Maison: 1  }
     enum typeVente: { Vente: 0 , Location: 1  }
 
@@ -59,5 +60,9 @@ A la une ? => #{self.AlaUne}"
             end
         end
         results
+    end
+
+    def destroy_images
+        self.photos.destroy_all
     end
 end

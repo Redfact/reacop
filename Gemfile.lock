@@ -24,6 +24,13 @@ GIT
       rack (>= 1.4.0)
       rest-client
 
+GIT
+  remote: https://github.com/tamvm/imgur
+  revision: d5e2cab119272e790ed850078ebff6be26fa2591
+  specs:
+    imgurapi (3.0.0)
+      faraday
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -142,8 +149,6 @@ GEM
       domain_name (~> 0.5)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
-    imgurapi (3.2.2)
-      faraday
     io-like (0.3.1)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
@@ -358,7 +363,7 @@ DEPENDENCIES
   devise
   dotenv-rails!
   faker!
-  imgurapi
+  imgurapi!
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mailjet!

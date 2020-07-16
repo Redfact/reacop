@@ -1,23 +1,21 @@
 <style>
-    pre {
-      overflow-x: auto;
-      white-space: pre-wrap;
-      white-space: -moz-pre-wrap;
-      white-space: -pre-wrap;
-      white-space: -o-pre-wrap;
-      word-wrap: break-word;
-    }
+  pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+  }
 
-    .fit-image {
-      object-fit:scale-down;
-      max-width: 900px;
-      height: 350px;
-      /* only if you want fixed height */
-    }
-
+  .fit-image {
+    object-fit: scale-down;
+    max-width: 900px;
+    height: 350px;
+  }
 </style>
 
-<div id="carouselExampleIndicators" class="carousel slide  mx-auto col-sm m-5 " data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide wrap  mx-auto col-sm m-5 " data-ride="carousel">
 
   <div class="carousel-inner mx-auto" role="listbox">
     <div class="carousel-item active m-2">
@@ -34,7 +32,7 @@
     <% @lasts.each do |photo| %>
     <div class="carousel-item m-2 text-center">
       <a class="text-center" href=<%=photo.url%>>
-        <img class="d-block mx-auto img-responsive fit-image "src=<%=photo.url%> alt="photo">
+        <img class="d-block mx-auto img-responsive fit-image " src=<%=photo.url%> alt="photo">
       </a>
     </div>
     <% end %>
@@ -55,7 +53,14 @@
 
 <div class="card mt-3 mb-5" style="width: 100%;">
   <div class="card-body">
-    <h3 class="card-title text-dark font-weight-bold"><%=@annonce.lieu%></h3>
+    <h3 class="card-title text-dark font-weight-bold">
+      <%=@annonce.lieu%>
+      <% if @admin==true %>
+        <%= link_to edit_admin_annonce_path  do %>
+        <%= image_tag "set.svg" ,width:"20" ,height:"20" ,class:"align-top card-title" ,alt:"Rea Brand"%>
+        <% end %>
+      <% end %>
+    </h3>
     <% if @annonce.Vente? %>
     <p class="card-subtitle mb-2 text-dark font-weight-bold">À vendre</p>
     <% else %>

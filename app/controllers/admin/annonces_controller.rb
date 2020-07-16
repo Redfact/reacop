@@ -3,10 +3,26 @@ module Admin
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
     #
-    # def update
-    #   super
-    #   send_foo_updated_email(requested_resource)
-    # end
+    def update
+      super
+      puts "Update annonce from admin interface".colorize(:green)
+      fileArray = params[:annonce][:images]
+      print fileArray,"\n"
+      @urls = Array.new
+        if( fileArray != nil )
+          fileArray.each do |i|
+              puts "file :".colorize(:light_green)
+              curfile = i.tempfile
+              if(curfile != nil)
+                image=Upload.new.image(curfile)
+                puts "url:".colorize(:light_green),image.link
+                photo = Photo.create(url:image.link,annonce_id: params[:id])
+                Annonce.find(params[:id]).photos<<photo
+              end 
+          end # do
+        end #if
+        
+    end #def
 
     # Override this method to specify custom lookup behavior.
     # This will be used to set the resource for the `show`, `edit`, and `update`

@@ -22,9 +22,17 @@ class AnnoncesController < ApplicationController
         end
     end
 
+    def update
+        puts "Update annonce".colorize(:green)
+    end
+
     def show 
         @annonce = Annonce.find(params[:id])
-        @place_libre= @annonce.place_libre
+        if(current_user)
+            @admin = current_user.admin
+        else 
+            @admin = false
+        end
         @photos = @annonce.photos
         @first = @photos.first
         @lasts = @photos.drop(1)

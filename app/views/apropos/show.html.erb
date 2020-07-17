@@ -1,17 +1,22 @@
 <style>
   .jumbotron {
     background-image: url('/assets/ReaJumbo.png');
-    height: 75vh;
-    width: 75%;
+    opacity: 1;
+    height:500px;
+    width: 1000px;
     margin-top: 1cm;
 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:contain;
+    background-color:whitesmoke;
     display: flex;
     align-items: center;
   }
 </style>
+
+<body class="bg-light">
+  
 
 <div class="d-flex justify-content-around">
   <div class="jumbotron text-center">
@@ -50,3 +55,5 @@
     <%= image_tag "fly3.jpg" , class:"card-img-top rounded col-md-4 p-3" ,alt:"Empty image"%>
   </div>
 </div>
+
+</body>

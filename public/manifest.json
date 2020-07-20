@@ -1,8 +1,9 @@
 {
   "name": "REA",
+  "short_name": "Real Estate Agency",
   "theme_color": "#00404f",
-  "background_color": "#b8c4cd",
-  "display": "fullscreen",
+  "background_color": "#00404f",
+  "display": "minimal-ui",
   "orientation": "portrait",
   "Scope": "/",
   "start_url": "/",

@@ -56,13 +56,15 @@
             <%= f.radio_button(:typeBien, "Appartement") %>
             <%= f.label(:appartement, "Appartement",class:"text-secondary") %>
             <%= f.radio_button(:typeBien,"Maison") %>
-            <%= f.label(:maison, "Maison",class:"text-secondary") %>
+            <%= f.label(:maison, "Maison",class:"text-secondary") %>            
+            <%= f.radio_button(:typeBien,"Terrain") %>
+            <%= f.label(:maison, "Terrain",class:"text-secondary") %>
         </div>
 
 
         <div class="field mt-3">
-            <%=f.file_field :images ,multiple:true
-            # accept:'image/*'
+            <%=f.file_field :images ,multiple:true,
+            accept:'image/*'
             %>
         </div>    
             

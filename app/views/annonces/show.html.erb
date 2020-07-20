@@ -61,7 +61,7 @@
 <div class="card mx-auto border border-light bg-light  mb-5 ">
   <div class="card-body">
     <h3 class="card-title text-dark font-weight-bold title">
-      <%=@annonce.lieu%>
+      <%="#{@annonce.typeBien} à #{@annonce.lieu}"%>
       <% if @admin==true %>
         <%= link_to edit_admin_annonce_path  do %>
         <%= image_tag "set.svg" ,width:"20" ,height:"20" ,class:"align-top card-title" ,alt:"Rea Brand"%>

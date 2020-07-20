@@ -1,6 +1,6 @@
 class Annonce < ApplicationRecord
     before_destroy :destroy_images
-    enum typeBien: { Appartement: 0 , Maison: 1  }
+    enum typeBien: { Appartement: 0 , Maison: 1 , Terrain: 2 }
     enum typeVente: { Vente: 0 , Location: 1  }
 
     has_many :AnInteressants
@@ -30,7 +30,9 @@ class Annonce < ApplicationRecord
             when "maison"
                 annonce.select{ |an| an.Maison? == true}
             when "appartement"
-                annonce.select{ |an| an.Appartement? == true}
+                annonce.select{ |an| an.Appartement? == true}            
+            when "terrain"
+                annonce.select{ |an| an.Terrain? == true}
             when "prixDesc"
                 annonce.sort_by(&:loyer_total).reverse
             when "prixAsc"

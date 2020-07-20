@@ -3,7 +3,7 @@
   "short_name": "Real Estate Agency",
   "theme_color": "#00404f",
   "background_color": "#00404f",
-  "display": "minimal-ui",
+  "display": "standalone",
   "orientation": "portrait",
   "Scope": "/",
   "start_url": "/",

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       resources :avatars
       root to: "users#index"
     end
-  devise_for :users
+  devise_for :users ,controllers: { sessions: 'users/sessions' }
   resources :annonces
   resources :users, only: [:index,:show]
   

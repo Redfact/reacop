@@ -6,6 +6,7 @@ Favori.destroy_all
 Avatar.destroy_all 
 Annonce.destroy_all
 AnInteressant.destroy_all
+Photo.destroy_all
 
 images =[
     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI0T8x1fGCe2OF4Wq5S5X6-k8A2H49yOvzEg&usqp=CAU",

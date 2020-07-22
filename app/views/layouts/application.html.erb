@@ -102,12 +102,11 @@
 
   </div>
   </nav>
-
   
   <% if user_signed_in? %>
-    <p class="notice text-white bg-success"><%= notice %></p>
+    <h5 class="notice text-white text-center bg-success m-1 border-0 rounded"><%= notice %></h5>
     <% else %>
-    <p class="notice text-white bg-warning"><%= alert %></p>
+    <h5 class="notice text-white text-center bg-warning m-1 border-0 rounded"><%= alert %></h5>
   <% end %>
   
 

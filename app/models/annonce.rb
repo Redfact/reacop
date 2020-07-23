@@ -2,6 +2,7 @@ class Annonce < ApplicationRecord
     before_destroy :destroy_images
     enum typeBien: { Appartement: 0 , Maison: 1 , Terrain: 2 }
     enum typeVente: { Vente: 0 , Location: 1  }
+    enum devise: { Ariary: 0 , Euro: 1  }
 
     has_many :AnInteressants
     has_many :UsersInterested, through: :AnInteressants, source: :user
@@ -15,7 +16,7 @@ class Annonce < ApplicationRecord
     validates :typeBien , presence: true
     validates :typeVente , presence: true
     validates :description , presence:true , length: {minimum:5}
-    validates :capacite , presence: true ,  numericality: { only_integer: true , greater_than: 0  }
+    validates :capacite ,numericality: { only_integer: true}
 
     def self.AlaUne
         Annonce.all.select{ |an| an.AlaUne == true}

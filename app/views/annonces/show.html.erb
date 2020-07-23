@@ -74,10 +74,12 @@
     <p class="card-subtitle mb-2 text-dark font-weight-bold">À louer</p>
     <% end %>
     <p class="card-subtitle mb-2 text-primary"><%=@prix%></p>
-    <p class="card-subtitle mb-2 text-muted">
-      <%= image_tag "bed.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
-      <%=@annonce.capacite%> Chambres
-    </p>
+    <% if @annonce.capacite > 0 %>  
+      <p class="card-subtitle mb-2 text-muted">
+        <%= image_tag "bed.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
+        <%=@annonce.capacite%> Chambres
+      </p>
+    <% end %>
     <pre class="card-text text-secondary"><%=@annonce.description%></pre>
   </div>
 </div>

@@ -36,7 +36,7 @@ class AnnoncesController < ApplicationController
         @photos = @annonce.photos
         @first = @photos.first
         @lasts = @photos.drop(1)
-        @prix = number_to_currency(@annonce.loyer_total, unit: "Ar", separator: ",", delimiter: ".", format: "%n %u",precision:0)
+        @prix = number_to_currency(@annonce.loyer_total, unit: @annonce.devise, separator: ",", delimiter: ".", format: "%n %u",precision:0)
 
 
     end
@@ -82,7 +82,7 @@ class AnnoncesController < ApplicationController
     end
 
     def annonce_params
-        params.require(:annonce).permit(:loyer_total,:description,:lieu,:capacite,:typeVente,:typeBien,:AlaUne)
+        params.require(:annonce).permit(:loyer_total,:description,:lieu,:capacite,:typeVente,:typeBien,:AlaUne,:devise)
     end
   
 end

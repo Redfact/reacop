@@ -21,33 +21,37 @@
         </h1>
 
         <div class="field mt-3">
+            <%= f.label"Type de vente" ,class:"font-weight-bold text-dark"%><br>
+            <%= f.radio_button(:typeVente,"Vente",onclick:"VenteFunc()" ) %>
+            <%= f.label(:vente, "Vente",class:"text-secondary") %>
+            <%= f.radio_button(:typeVente, "Location",onclick:"LocationFunc()") %>
+            <%= f.label(:location, "Location",class:"text-secondary") %>
+        </div>
+
+        <div class="field mt-3">
             <%= f.label :lieu ,class:"font-weight-bold text-dark" %>
             <%= f.text_field :lieu ,class:"form-control mr-sm-2 border border-info rounded"%>
         </div>
 
         <div class="field mt-3">
-            <%= f.label :prix ,class:"font-weight-bold text-dark" %>
+            <%= f.label "Prix" ,class:"font-weight-bold text-dark" %>
             <%= f.number_field :loyer_total,min:"0",value:"0",
             class:"form-control mr-sm-2 border border-info rounded"%>
+            <%= f.radio_button(:devise,"Ariary") %>
+            <%= f.label(:Ariary, "Ariary",class:"text-secondary mt-1 mr-1") %>
+            <%= f.radio_button(:devise, "Euro") %>
+            <%= f.label(:Euro, "Euro",class:"text-secondary mt-1 ") %>
         </div>
 
-        <div class="field mt-3">
-            <%= f.label :capacite ,class:"font-weight-bold text-dark"%>
-            <%= f.number_field :capacite,min:"1",value:"1",
+        <div class="field mt-3 d-none" id="capacite">
+            <%= f.label "capacite" ,class:"font-weight-bold text-dark",id:"label" %>
+            <%= f.number_field :capacite,min:"0",value:"0",id:'fieldname',
             class:"form-control mr-sm-2 border border-info rounded"%>
         </div>
 
         <div class="field mt-3">
             <%= f.label :description ,class:"font-weight-bold text-dark" %><br>
             <%= f.text_area :description ,:rows=>5, :cols=>60 ,class:" form-control mr-sm-2 border border-info rounded"%>
-        </div>
-
-        <div class="field mt-3">
-            <%= f.label"Type de vente" ,class:"font-weight-bold text-dark"%><br>
-            <%= f.radio_button(:typeVente,"Vente") %>
-            <%= f.label(:vente, "Vente",class:"text-secondary") %>
-            <%= f.radio_button(:typeVente, "Location") %>
-            <%= f.label(:location, "Location",class:"text-secondary") %>
         </div>
 
 
@@ -57,15 +61,16 @@
             <%= f.label(:appartement, "Appartement",class:"text-secondary") %>
             <%= f.radio_button(:typeBien,"Maison") %>
             <%= f.label(:maison, "Maison",class:"text-secondary") %>
+            <%= f.radio_button(:typeBien,"Terrain") %>
+            <%= f.label(:maison, "Terrain",class:"text-secondary") %>
         </div>
 
-
         <div class="field mt-3">
-            <%=f.file_field :images ,multiple:true
-            # accept:'image/*'
+            <%=f.file_field :images ,multiple:true,
+            accept:'image/*'
             %>
-        </div>    
-            
+        </div>
+
         <div class="field mt-3">
             <%= f.check_box(:AlaUne)%>
             <%= f.label(:AlaUne,"Annonce à la une",class:"font-weight-bold text-dark") %>
@@ -79,9 +84,12 @@
 
     </div>
 
+
+
 </body>
 
 <footer>
+    <%= javascript_include_tag 'indexAnnonces'%>
 </footer>
 
 </html>

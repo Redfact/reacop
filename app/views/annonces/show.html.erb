@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <style>
   pre {
     overflow-x: auto;
@@ -7,19 +8,26 @@
     white-space: -o-pre-wrap;
     word-wrap: break-word;
   }
-  .card{
+
+  .card {
     max-width: 900px;
     height: 600px;
   }
-  .carousel{
+
+  .carousel {
     max-width: 900px;
   }
+
   .fit-image {
     object-fit: cover;
     max-width: 900px;
     height: 600px;
   }
-  
+
+  .ruboto {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+  }
 </style>
 
 <div id="carouselExampleIndicators" class="carousel slide wrap  mx-auto col-sm m-5 " data-ride="carousel">
@@ -61,11 +69,11 @@
 <div class="card mx-auto border border-light bg-light  mb-5 ">
   <div class="card-body">
     <h3 class="card-title text-dark font-weight-bold title">
-      <%=@annonce.lieu%>
+      <%="#{@annonce.typeBien} à #{@annonce.lieu}"%>
       <% if @admin==true %>
-        <%= link_to edit_admin_annonce_path  do %>
-        <%= image_tag "set.svg" ,width:"20" ,height:"20" ,class:"align-top card-title" ,alt:"Rea Brand"%>
-        <% end %>
+      <%= link_to edit_admin_annonce_path  do %>
+      <%= image_tag "set.svg" ,width:"20" ,height:"20" ,class:"align-top card-title" ,alt:"Rea Brand"%>
+      <% end %>
       <% end %>
     </h3>
     <% if @annonce.Vente? %>
@@ -74,10 +82,12 @@
     <p class="card-subtitle mb-2 text-dark font-weight-bold">À louer</p>
     <% end %>
     <p class="card-subtitle mb-2 text-primary"><%=@prix%></p>
+    <% if @annonce.capacite > 0 %>
     <p class="card-subtitle mb-2 text-muted">
       <%= image_tag "bed.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
       <%=@annonce.capacite%> Chambres
     </p>
-    <pre class="card-text text-secondary"><%=@annonce.description%></pre>
+    <% end %>
+    <pre class="card-text text-secondary ruboto"><%=@annonce.description%></pre>
   </div>
 </div>

@@ -4,11 +4,18 @@
     <title>Rea</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta property="og:title" content="Title">
+    <meta property="og:site_name" content="Reagency-mada">
+    <meta property="og:url" content="reagency-mada.com">
+    <meta property="og:description" content="Rea,le partenaire qui est là">
+    <meta property="og:type" content="article">
+
     <%= favicon_link_tag asset_path('logo.png') %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= yield :javascript_includes %>
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -101,12 +108,11 @@
 
   </div>
   </nav>
-
   
   <% if user_signed_in? %>
-    <p class="notice text-white bg-success"><%= notice %></p>
+    <h5 class="notice text-white text-center bg-success m-1 border-0 rounded"><%= notice %></h5>
     <% else %>
-    <p class="notice text-white bg-warning"><%= notice %></p>
+    <h5 class="notice text-white text-center bg-warning m-1 border-0 rounded"><%= alert %></h5>
   <% end %>
   
 

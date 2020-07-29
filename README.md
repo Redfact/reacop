@@ -1,4 +1,5 @@
 # README
+
 Projet ReImmo , site de vente/location immobilier
-Site disponible 
-reagency-mada.com
+Site disponible sur 
+www.reagency-mada.com

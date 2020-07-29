@@ -24,6 +24,9 @@ class AnnonceDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     AlaUne:Field::Boolean,
+    devise: Field::Text,
+    typeBien: Field::Text,
+    typeVente: Field::Text
 
   }.freeze
 
@@ -43,8 +46,11 @@ class AnnonceDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     AlaUne
+    devise
     lieu
     capacite
+    typeBien
+    typeVente
     loyer_total
     description
     photos
@@ -54,12 +60,15 @@ class AnnonceDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  AlaUne
-  lieu
-  capacite
-  loyer_total
-  description
-  photos
+    AlaUne
+    devise
+    lieu
+    capacite
+    typeBien
+    typeVente
+    loyer_total
+    description
+    photos
   ].freeze
 
   # COLLECTION_FILTERS

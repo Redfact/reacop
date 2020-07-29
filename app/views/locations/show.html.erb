@@ -24,9 +24,11 @@
                     <%if( @secondSort != nil )%>
                     <%=link_to "Maison",locations_path(:sort =>"maison",:secondSort=>@secondSort),id:"bt-maison",class:"dropdown-item"%>
                     <%=link_to "Appartement",locations_path(:sort =>"appartement",:secondSort=>@secondSort),id:"bt-appart",class:"dropdown-item"%>
+                    <%=link_to "Terrain",locations_path(:sort =>"terrain",:secondSort=>@secondSort),id:"bt-appart",class:"dropdown-item"%>
                     <%else%>
                     <%=link_to "Maison",locations_path(:sort =>"maison"),id:"bt-maison",class:"dropdown-item"%>
                     <%=link_to "Appartement",locations_path(:sort =>"appartement"),id:"bt-appart",class:"dropdown-item"%>
+                    <%=link_to "Terrain",locations_path(:sort =>"terrain"),id:"bt-appart",class:"dropdown-item"%>
                     <%end%>
                 </div>
             </li>
@@ -83,12 +85,14 @@
                 <p class="card-subtitle mb-2 text-dark font-weight-bold">À louer</p>
                 <% end %>
                 <p class="card-subtitle mb-2 text-primary ">
-                    <%=number_to_currency(an.loyer_total, unit: "Ar", separator: ",", delimiter: ".", format: "%n %u",precision:0)%>
+                    <%=number_to_currency(an.loyer_total, unit: an.devise, separator: ",", delimiter: ".", format: "%n %u",precision:0)%>
                 </p>
+                <% if an.capacite > 0 %> 
                 <p class="card-subtitle mb-2 text-muted">
                     <%= image_tag "bed.svg" ,width:"25" ,height:"25" ,class:" align-top" ,alt:"Rea Brand"%>
                     <%=an.capacite%> Chambres
                 </p>
+                <% end %>
                 <p class="card-text text-truncate"><%=an.description%></p>
                 <p class="card-subtitle mb-2 text-muted">
                     Postée le <%=an.created_at.to_date%>

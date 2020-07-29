@@ -10,16 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_135909) do
+ActiveRecord::Schema.define(version: 2020_07_23_172354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "active_storage_imgur_key_mappings", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "imgur_id", null: false
-    t.index ["key"], name: "index_active_storage_imgur_key_mappings_on_key", unique: true
-  end
 
   create_table "an_interessants", force: :cascade do |t|
     t.bigint "user_id"
@@ -43,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_135909) do
     t.boolean "AlaUne", default: false
     t.integer "typeBien", default: 0
     t.integer "typeVente", default: 0
+    t.integer "devise", default: 0
   end
 
   create_table "avatars", force: :cascade do |t|
@@ -73,6 +68,8 @@ ActiveRecord::Schema.define(version: 2020_07_07_135909) do
   create_table "photos", force: :cascade do |t|
     t.string "url"
     t.bigint "annonce_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["annonce_id"], name: "index_photos_on_annonce_id"
   end
 

@@ -1,9 +1,6 @@
 gem 'faker'
 
-User.destroy_all
-Message.destroy_all
 Annonce.destroy_all
-Photo.destroy_all
 
 an1 = Annonce.create(
     lieu:"Ambatobe",

@@ -25,7 +25,7 @@ LinkThumbnailer.configure do |config|
   # List of blacklisted urls you want to skip when searching for images.
   #
   config.blacklist_urls = [
-    %r{^http://reagency-mada.com/assets/ReaTr.png}
+    "http://reagency-mada.com/assets/ReaTr.png"
   ]
 
   # List of attributes you want LinkThumbnailer to fetch on a website.

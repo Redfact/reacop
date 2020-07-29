@@ -8,7 +8,7 @@ LinkThumbnailer.configure do |config|
 
   # Set user agent
   #
-  # config.user_agent = 'link_thumbnailer'
+  config.user_agent = 'link_thumbnailer'
 
   # Enable or disable SSL verification
   #
@@ -24,16 +24,13 @@ LinkThumbnailer.configure do |config|
 
   # List of blacklisted urls you want to skip when searching for images.
   #
-  # config.blacklist_urls = [
-  #   %r{^http://ad\.doubleclick\.net/},
-  #   %r{^http://b\.scorecardresearch\.com/},
-  #   %r{^http://pixel\.quantserve\.com/},
-  #   %r{^http://s7\.addthis\.com/}
-  # ]
+  config.blacklist_urls = [
+    %r{^http://reagency-mada.com/assets/ReaTr.png}
+  ]
 
   # List of attributes you want LinkThumbnailer to fetch on a website.
   #
-  # config.attributes = [:title, :images, :description, :videos, :favicon]
+  config.attributes = [:title, :images, :description, :videos, :favicon]
 
   # Prior favicon size. If the website doesn't have such size - returns the first favicon.
   # Value should be like '32x32' or '16x16'. Default value is nil.
@@ -67,7 +64,7 @@ LinkThumbnailer.configure do |config|
   # Note that LinkThumbnailer will only sort fetched images between each other.
   # Meaning that they could be a "better" image on the page.
   #
-  # config.image_limit = 5
+  config.image_limit = 2
 
   # Whether you want LinkThumbnailer to return image size and type or not.
   # Setting this value to false will increase performance since for each images, LinkThumbnailer
@@ -94,5 +91,7 @@ LinkThumbnailer.configure do |config|
 
   # Sets the default encoding.
   #
-  # config.encoding = 'utf-8'
+  config.encoding = 'utf-8'
 end
+
+

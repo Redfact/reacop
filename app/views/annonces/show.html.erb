@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <style>
   pre {
     overflow-x: auto;
@@ -23,6 +24,10 @@
     height: 600px;
   }
 
+  .ruboto {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+  }
 </style>
 
 <div id="carouselExampleIndicators" class="carousel slide wrap  mx-auto col-sm m-5 " data-ride="carousel">
@@ -83,6 +88,6 @@
       <%=@annonce.capacite%> Chambres
     </p>
     <% end %>
-    <pre class="card-text text-secondary"><%=@annonce.description%></pre>
+    <pre class="card-text text-secondary ruboto"><%=@annonce.description%></pre>
   </div>
 </div>

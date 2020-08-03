@@ -1,6 +1,10 @@
 gem 'faker'
 
+
 Annonce.destroy_all
+User.destroy_all
+
+User.create(email:"tantelyrandria@ymail.com",password:"123456",admin:true)
 
 an1 = Annonce.create(
     lieu:"Ambatobe",

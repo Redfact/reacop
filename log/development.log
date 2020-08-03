@@ -1,0 +1,66 @@
+Started GET "/" for ::1 at 2020-08-03 18:22:43 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/red/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by AccueilController#show as HTML
+  [1m[36mAnnonce Load (0.3ms)[0m  [1m[34mSELECT "annonces".* FROM "annonces"[0m
+  ↳ app/models/annonce.rb:22
+  Rendering accueil/show.html.erb within layouts/application
+  [1m[36mPhoto Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "photos" WHERE "photos"."annonce_id" = $1 LIMIT $2[0m  [["annonce_id", 6], ["LIMIT", 1]]
+  ↳ app/views/accueil/show.html.erb:34
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."annonce_id" = $1 ORDER BY "photos"."id" ASC LIMIT $2[0m  [["annonce_id", 6], ["LIMIT", 1]]
+  ↳ app/views/accueil/show.html.erb:35
+  [1m[36mPhoto Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "photos" WHERE "photos"."annonce_id" = $1 LIMIT $2[0m  [["annonce_id", 7], ["LIMIT", 1]]
+  ↳ app/views/accueil/show.html.erb:34
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."annonce_id" = $1 ORDER BY "photos"."id" ASC LIMIT $2[0m  [["annonce_id", 7], ["LIMIT", 1]]
+  ↳ app/views/accueil/show.html.erb:35
+  [1m[36mPhoto Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "photos" WHERE "photos"."annonce_id" = $1 LIMIT $2[0m  [["annonce_id", 8], ["LIMIT", 1]]
+  ↳ app/views/accueil/show.html.erb:34
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."annonce_id" = $1 ORDER BY "photos"."id" ASC LIMIT $2[0m  [["annonce_id", 8], ["LIMIT", 1]]
+  ↳ app/views/accueil/show.html.erb:35
+  [1m[36mPhoto Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "photos" WHERE "photos"."annonce_id" = $1 LIMIT $2[0m  [["annonce_id", 9], ["LIMIT", 1]]
+  ↳ app/views/accueil/show.html.erb:34
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."annonce_id" = $1 ORDER BY "photos"."id" ASC LIMIT $2[0m  [["annonce_id", 9], ["LIMIT", 1]]
+  ↳ app/views/accueil/show.html.erb:35
+  [1m[36mPhoto Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "photos" WHERE "photos"."annonce_id" = $1 LIMIT $2[0m  [["annonce_id", 10], ["LIMIT", 1]]
+  ↳ app/views/accueil/show.html.erb:34
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."annonce_id" = $1 ORDER BY "photos"."id" ASC LIMIT $2[0m  [["annonce_id", 10], ["LIMIT", 1]]
+  ↳ app/views/accueil/show.html.erb:35
+  Rendered accueil/show.html.erb within layouts/application (527.0ms)
+Completed 200 OK in 600ms (Views: 580.5ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/accueil.self.css?body=1" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/annonces.self.css?body=1" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/apropos.self.css?body=1" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/avatars.self.css?body=1" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/contacts.self.css?body=1" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/proposer_bien.self.css?body=1" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/locations.self.css?body=1" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/users.self.css?body=1" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/ventes.self.css?body=1" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/application.self.css?body=1" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/rails-ujs.self.js?body=1" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/activestorage.self.js?body=1" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/turbolinks.self.js?body=1" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/application.self.js?body=1" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/ReaTr.png" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/bed.svg" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/phone.svg" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/facebook.svg" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/instagram.svg" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/mail.svg" for ::1 at 2020-08-03 18:22:43 +0200
+Started GET "/assets/photos.self.css?body=1" for ::1 at 2020-08-03 18:22:44 +0200
+Started GET "/annonces/6" for ::1 at 2020-08-03 18:22:45 +0200
+Processing by AnnoncesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAnnonce Load (0.7ms)[0m  [1m[34mSELECT  "annonces".* FROM "annonces" WHERE "annonces"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/annonces_controller.rb:30
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."annonce_id" = $1 ORDER BY "photos"."id" ASC LIMIT $2[0m  [["annonce_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/annonces_controller.rb:37
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."annonce_id" = $1[0m  [["annonce_id", 6]]
+  ↳ app/controllers/annonces_controller.rb:38
+  Rendering annonces/show.html.erb within layouts/application
+  Rendered annonces/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 66ms (Views: 51.8ms | ActiveRecord: 2.0ms)
+
+
